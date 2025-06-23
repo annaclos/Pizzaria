@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Pizzaria Jardim - Recuperar Senha</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        /* Estilo para label na frente do input, um campo por linha */
+        #apartamentoCampos {
+            display: none;
+            margin-top: 10px;
+        }
+        .campo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .campo label {
+            width: 100px; /* fixa a largura da label para alinhar */
+            margin-right: 10px;
+        }
+        .campo input {
+            flex: 1;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Recuperar Senha</h1>
+        <form method="post">
+            <label>Nome</label>
+            <input type="text" name="Nome" required />
+
+            <label>Email</label>
+            <input type="email" name="Email" required />
+
+            <label>Telefone</label>
+            <input type="tel" name="Telefone" id="telefone" required pattern="[0-9]{10,11}" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '')" />
+
+            <label>CPF</label>
+            <input type="text" name="Cpf" id="cpf" required pattern="[0-9]{11}" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '')" />
+
+            <label>CEP</label>
+            <input type="text" name="Cep" id="cep" required pattern="[0-9]{8}" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '')" />
+
+            <label>Endereço</label>
+            <input type="text" name="Endereco" required />
+
+            <label>Número da Casa</label>
+            <input type="text" name="NumeroCasa" required />
+
+            <label>Bairro</label>
+            <input type="text" name="Bairro" required />
+
+            <label>Apartamento?</label>
+            <select id="temApartamento" name="TemApartamento" onchange="toggleApartamento()">
+                <option value="nao" selected>Não</option>
+                <option value="sim">Sim</option>
+            </select>
+
+            <div id="apartamentoCampos">
+                <div class="campo">
+                    <label for="bloco">Bloco</label>
+                    <input type="text" name="Bloco" id="bloco" />
+                </div>
+                <div class="campo">
+                    <label for="numeroApartamento">Apartamento</label>
+                    <input type="text" name="NumeroApartamento" id="numeroApartamento" />
+                </div>
+            </div>
+
+            <button type="submit">Enviar</button>
+        </form>
+        <a href="index.html">Voltar para Login</a>
+    </div>
+
+    <script>
+        function toggleApartamento() {
+            const select = document.getElementById('temApartamento');
+            const aptoCampos = document.getElementById('apartamentoCampos');
+            const numeroApto = document.getElementById('numeroApartamento');
+
+            if (select.value === 'sim') {
+                aptoCampos.style.display = 'block';
+                numeroApto.setAttribute('required', 'required');
+            } else {
+                aptoCampos.style.display = 'none';
+                numeroApto.removeAttribute('required');
+                numeroApto.value = '';
+                document.getElementById('bloco').value = '';
+            }
+        }
+    </script>
+</body>
+</html>
