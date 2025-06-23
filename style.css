@@ -1,63 +1,138 @@
-body {
-    font-family: Arial;
-    background-color: #ffe9dc;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+* {
+  box-sizing: border-box;
 }
 
-.login-container, .form-container {
-    background-color: white;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    width: 350px;
+body {
+  background-color: #5a1a1a; 
+  color: #f5f5f5;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.cadastro-container, .login-container, .form-container {
+  background-color: rgba(63, 59, 59, 0.6); 
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2); 
+  width: 350px;
+  max-width: 100%;
+  text-align: center;
+}
+
+
+
+.logo {
+  width: 120px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+
+h1, h2 {
+  margin: 10px 0;
+  color: #f5f5f5;
 }
 
 h1 {
-    text-align: center;
-    color: #d35400;
+  font-size: 28px;
 }
 
 h2 {
-    text-align: center;
-    color: #d35400;
+  font-size: 20px;
+  margin-bottom: 20px;
 }
+
 
 form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
+
 
 label {
-    margin-top: 10px;
+  text-align: left;
+  margin: 10px 0 5px;
+  font-weight: bold;
+  color: #f5f5f5;
 }
+
 
 input, select {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #2e2e2e;
+  color: #f5f5f5;
+  font-size: 16px;
 }
 
-button {
-    margin-top: 15px;
-    padding: 10px;
-    background-color: #d35400;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
+
+button, button[type="submit"] {
+  padding: 12px 20px;
+  background-color: #d42d2d;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  margin-top: 10px;
 }
 
-button:hover {
-    background-color: #e67e22;
+button:hover, button[type="submit"]:hover {
+  background-color: #a32020;
+}
+
+.mensagem-erro {
+  color: #ff4b4b;
+  font-size: 0.9em;
+  margin-top: -8px;
+  margin-bottom: 10px;
+  display: none;
+}
+
+.link-voltar {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.link-voltar a button {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background-color 0.3s;
+}
+
+.link-voltar a button:hover {
+  background-color: white;
+  color: black;
 }
 
 a {
-    display: block;
-    margin-top: 10px;
-    text-align: center;
-    color: #d35400;
-    text-decoration: none;
+  color: #d42d2d;
+  text-decoration: none;
+  font-weight: bold;
 }
+
+a:hover {
+  text-decoration: underline;
+}
+.cadastro-container .logo {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 15px;
+    border-radius: 50%;
+}
+

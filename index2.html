@@ -1,96 +1,193 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-    <meta charset="utf-8" />
-    <title>Pizzaria Jardim - Recuperar Senha</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <title>Pizzaria Jardim - Cadastro</title>
     <style>
-        /* Estilo para label na frente do input, um campo por linha */
-        #apartamentoCampos {
-            display: none;
-            margin-top: 10px;
-        }
-        .campo {
+        body {
+            background-color: #4c0c0c;
             display: flex;
+            justify-content: center;
             align-items: center;
-            margin-bottom: 10px;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
         }
-        .campo label {
-            width: 100px; /* fixa a largura da label para alinhar */
-            margin-right: 10px;
+
+        .cadastro-container {
+            background-color: #1c1c1c;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+            text-align: center;
+            width: 400px;
+            color: #fff;
         }
-        .campo input {
-            flex: 1;
-            padding: 5px;
+
+        .cadastro-container h1 {
+            color: #c1e1b0;
         }
+
+        .cadastro-container h2 {
+            color: #d98544;
+        }
+
+        /* .cadastro-container .logo {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 15px;
+            border-radius: 50%;
+        } */
+
+        form input,
+        form select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            background-color: #2e2e2e;
+            color: #fff;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #cc6d2c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #b45d22;
+        }
+
+        .mensagem-erro {
+            color: #ff6b6b;
+            font-size: 12px;
+            display: none;
+            text-align: left;
+        }
+
+        .apartamento-info {
+            display: none;
+            gap: 10px;
+            margin-top: 10px;
+            justify-content: space-between;
+        }
+
+        .apartamento-info input {
+            width: 48%;
+        }
+
+        .link-voltar {
+            margin-top: 20px;
+        }
+
+        .link-voltar button {
+            background-color: #555;
+        }
+
+        .link-voltar button:hover {
+            background-color: #444;
+        }
+        .logo {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 15px;
+    border-radius: 50%;
+}
     </style>
 </head>
 <body>
-    <div class="form-container">
-        <h1>Recuperar Senha</h1>
-        <form method="post">
-            <label>Nome</label>
-            <input type="text" name="Nome" required />
 
-            <label>Email</label>
-            <input type="email" name="Email" required />
+    <div class="cadastro-container">
+        <img src="https://instadelivery-public.nyc3.cdn.digitaloceanspaces.com/stores/logo/172659447666e9bdac6f4d2_medium.png" alt="Logo Pizzaria Jardim" class="logo">
+        <h1>Pizzaria Jardim</h1>
+        <h2>Cadastro</h2>
 
-            <label>Telefone</label>
-            <input type="tel" name="Telefone" id="telefone" required pattern="[0-9]{10,11}" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '')" />
+        <form id="cadastroForm" action="cadastro.php" method="post">
+            <input type="text" name="nome" placeholder="Nome" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="senha" id="senha" placeholder="Senha (mínimo 6 caracteres)" required minlength="6">
+            <input type="password" name="confirmar_senha" id="confirmar_senha" placeholder="Confirmar Senha" required minlength="6">
+            <p id="erroSenha" class="mensagem-erro">As senhas não coincidem ou possuem menos de 6 caracteres.</p>
 
-            <label>CPF</label>
-            <input type="text" name="Cpf" id="cpf" required pattern="[0-9]{11}" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '')" />
+            <input type="text" name="telefone" id="telefone" placeholder="Telefone" required>
+            <p id="erroTelefone" class="mensagem-erro">Digite apenas números (10 a 11 dígitos).</p>
+            <input type="text" name="endereco" placeholder="Endereço" required>
 
-            <label>CEP</label>
-            <input type="text" name="Cep" id="cep" required pattern="[0-9]{8}" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '')" />
-
-            <label>Endereço</label>
-            <input type="text" name="Endereco" required />
-
-            <label>Número da Casa</label>
-            <input type="text" name="NumeroCasa" required />
-
-            <label>Bairro</label>
-            <input type="text" name="Bairro" required />
-
-            <label>Apartamento?</label>
-            <select id="temApartamento" name="TemApartamento" onchange="toggleApartamento()">
-                <option value="nao" selected>Não</option>
+            <select name="mora_apartamento" id="moraApartamento" required>
+                <option value="">Apartamento?</option>
+                <option value="nao">Não</option>
                 <option value="sim">Sim</option>
             </select>
 
-            <div id="apartamentoCampos">
-                <div class="campo">
-                    <label for="bloco">Bloco</label>
-                    <input type="text" name="Bloco" id="bloco" />
-                </div>
-                <div class="campo">
-                    <label for="numeroApartamento">Apartamento</label>
-                    <input type="text" name="NumeroApartamento" id="numeroApartamento" />
-                </div>
+            <div class="apartamento-info" id="apartamentoInfo">
+                <input type="text" name="apartamento" placeholder="Apartamento" required>
+                <input type="text" name="bloco" placeholder="Bloco">
             </div>
 
-            <button type="submit">Enviar</button>
+            <button type="submit">Cadastrar</button>
         </form>
-        <a href="index.html">Voltar para Login</a>
+
+        <div class="link-voltar">
+            <a href="index.html">
+                <button type="button">Já possui cadastro? Clique aqui!</button>
+            </a>
+        </div>
     </div>
 
     <script>
-        function toggleApartamento() {
-            const select = document.getElementById('temApartamento');
-            const aptoCampos = document.getElementById('apartamentoCampos');
-            const numeroApto = document.getElementById('numeroApartamento');
+        const form = document.getElementById("cadastroForm");
+        const senha = document.getElementById("senha");
+        const confirmarSenha = document.getElementById("confirmar_senha");
+        const erroSenha = document.getElementById("erroSenha");
 
-            if (select.value === 'sim') {
-                aptoCampos.style.display = 'block';
-                numeroApto.setAttribute('required', 'required');
+        const telefone = document.getElementById("telefone");
+        const erroTelefone = document.getElementById("erroTelefone");
+
+        const moraApartamento = document.getElementById("moraApartamento");
+        const apartamentoInfo = document.getElementById("apartamentoInfo");
+
+        telefone.addEventListener("input", () => {
+            telefone.value = telefone.value.replace(/\D/g, "");
+        });
+
+        moraApartamento.addEventListener("change", () => {
+            if (moraApartamento.value === "sim") {
+                apartamentoInfo.style.display = "flex";
             } else {
-                aptoCampos.style.display = 'none';
-                numeroApto.removeAttribute('required');
-                numeroApto.value = '';
-                document.getElementById('bloco').value = '';
+                apartamentoInfo.style.display = "none";
             }
-        }
+        });
+
+        form.addEventListener("submit", function(event) {
+            let valido = true;
+
+            if (senha.value !== confirmarSenha.value || senha.value.length < 6) {
+                erroSenha.style.display = "block";
+                valido = false;
+            } else {
+                erroSenha.style.display = "none";
+            }
+
+            if (!/^\d{10,11}$/.test(telefone.value)) {
+                erroTelefone.style.display = "block";
+                valido = false;
+            } else {
+                erroTelefone.style.display = "none";
+            }
+
+            if (!valido) event.preventDefault();
+        });
     </script>
+
 </body>
 </html>
+
+
