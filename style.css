@@ -41,11 +41,13 @@ h1, h2 {
 
 h1 {
   font-size: 28px;
+    margin-left: 10px, 0px, 10px, 12px;
 }
 
 h2 {
   font-size: 20px;
   margin-bottom: 20px;
+
 }
 
 
@@ -74,21 +76,21 @@ input, select {
   font-size: 16px;
 }
 
-
-button, button[type="submit"] {
+.botao-link {
+  display: inline-block;
+  background-color: #444;
+  color: #fff;
   padding: 12px 20px;
-  background-color: #d42d2d;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 16px;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 15px;
+  margin: 8px 5px;
   transition: background-color 0.3s;
-  margin-top: 10px;
+  text-decoration: none;
 }
 
-button:hover, button[type="submit"]:hover {
-  background-color: #a32020;
+.botao-link:hover {
+  background-color: #666;
 }
 
 .mensagem-erro {
@@ -104,6 +106,9 @@ button:hover, button[type="submit"]:hover {
   text-align: center;
 }
 
+.botaoSenha{
+  border-radius: 5px;
+}
 .link-voltar a button {
   background-color: transparent;
   border: 2px solid white;
@@ -114,6 +119,18 @@ button:hover, button[type="submit"]:hover {
   font-size: 15px;
   transition: background-color 0.3s;
 }
+
+ button {
+            width: 100%;
+            padding: 10px;
+            background-color: #cc6d2c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
 
 .link-voltar a button:hover {
   background-color: white;
@@ -136,3 +153,11 @@ a:hover {
     border-radius: 50%;
 }
 
+.logo {
+  width: 130px;
+  height: auto;
+  margin-bottom: 20px;
+}
+.container {
+  text-align: center;
+}
