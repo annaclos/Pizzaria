@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Pizzaria Jardim - Promoções</title>
+
+    <link rel="stylesheet" href="assets">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #3D0A0A;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            text-align: center;
+        }
+
+        .top-pizza {
+            width: 300px;
+        }
+
+        .logo {
+            width: 180px;
+            margin: 20px auto;
+        }
+
+        .promo-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .promo-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .endereco-box{
+            text-align: start;
+        }
+
+        .promo-circle {
+            background-color: #fff;
+            width: 160px;
+            height: 160px;
+            border-radius: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .promo-circle:hover {
+            transform: scale(1.1);
+            background-color: #FF4D6D;
+        }
+
+        .promo-circle img {
+            width: 150px;
+            height: 150px;
+            border-radius: 100%;
+        }
+
+        .promo-text {
+            margin-top: 30px;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .status-wrapper {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            text-align: left;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .status-box {
+            display: inline-block;
+            background-color: #900;
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 8px;
+            margin-bottom: 4px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .status-open {
+            background-color: #2ECC71;
+        }
+
+        .status-closed {
+            background-color: #990000;
+        }
+
+        .status-text {
+            color: #fff;
+        }
+
+        .endereco-wrapper {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            text-align: right;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .endereco-box {
+            background-color:#FF8C0A;
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            line-height: 1.4;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="status-wrapper">
+        <div id="statusBox" class="status-box">Verificando...</div>
+        <div class="status-text" id="statusLinha2">18:00 às 23:00</div>
+        <div class="status-text" id="statusLinha3">Pedido mínimo: R$ 20,00</div>
+    </div>
+
+    <div class="endereco-wrapper">
+        <div class="endereco-box">
+            <p><strong>Cidade:</strong> Uberlândia - MG.</p>
+
+            <p><strong>Unidade 1:</strong> Bairro Luizote - (34) 3223-3075<br>
+                Avenida José Fonseca e Silva, 1044.</p>
+
+            <p><strong>Unidade 2:</strong> Bairro São Jorge - (34) 3254-7171<br>
+                Avenida Dolorita Elias do Nascimento, 787.</p>
+
+            <p><strong>Unidade 3:</strong> Bairro Pequis - (34) 3254-2917<br>
+                Avenida Wilson Rodrigues da Silva, 70.</p>
+        </div>
+    </div>
+
+    <img class="logo" src="./assets/PIZZA JARDIM.png" alt="Pizza Jardim">
+
+    <div class="promo-container">
+        <div class="promo-item">
+            <div class="promo-circle">
+                <img src="./assets/pizza.png" alt="Pizza" class="top-pizza">
+            </div>
+            <div class="promo-text">
+                Promoção!<br>Duas pizzas M (6 pedaços)<br>por R$ 68,90.
+            </div>
+        </div>
+
+        <div class="promo-item">
+            <div class="promo-circle">
+                <img src="./assets/pizza.png" alt="Pizza" class="top-pizza">
+            </div>
+            <div class="promo-text">
+                Promoção!<br>Duas pizzas G (8 pedaços)<br>por R$ 87,90.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function verificarHorarioFuncionamento() {
+            const agora = new Date();
+            const horas = agora.getHours();
+            const minutos = agora.getMinutes();
+
+            const inicioHora = 18;
+            const inicioMinuto = 20;
+            const fimHora = 22;
+            const fimMinuto = 50;
+
+            const statusBox = document.getElementById("statusBox");
+            const statusLinha2 = document.getElementById("statusLinha2");
+            const statusLinha3 = document.getElementById("statusLinha3");
+
+            const depoisDoInicio = (horas > inicioHora) || (horas === inicioHora && minutos >= inicioMinuto);
+            const antesDoFim = (horas < fimHora) || (horas === fimHora && minutos <= fimMinuto);
+
+            if (depoisDoInicio && antesDoFim) {
+                statusBox.textContent = "Aberto";
+                statusBox.classList.add("status-open");
+                statusBox.classList.remove("status-closed");
+            } else {
+                statusBox.textContent = "Fechado";
+                statusBox.classList.add("status-closed");
+                statusBox.classList.remove("status-open");
+            }
+
+            statusLinha2.textContent = "Horário de funcionamento: 18:00 às 23:00";
+            statusLinha3.textContent = "Pedido mínimo: R$ 20,00";
+        }
+
+        verificarHorarioFuncionamento();
+        setInterval(verificarHorarioFuncionamento, 60000);
+    </script>
+</body>
+
+</html>
