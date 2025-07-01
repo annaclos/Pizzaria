@@ -4,83 +4,37 @@
 <head>
     <meta charset="UTF-8" />
     <title>Pizzaria Jardim - Promoções</title>
-
-    <link rel="stylesheet" href="assets">
     <style>
         body {
             margin: 0;
-            padding: 0;
-            background-color: #3D0A0A;
             font-family: Arial, sans-serif;
+            background-color: #B71C1C;
             color: #fff;
-            text-align: center;
         }
 
-        .top-pizza {
-            width: 300px;
+        /* Cabeçalho */
+        header {
+            background-color: #b71c1c;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            position: relative;
+            height: 220px;
         }
 
         .logo {
-            width: 180px;
-            margin: 20px auto;
-        }
-
-        .promo-container {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin-top: 30px;
-            flex-wrap: wrap;
-        }
-
-        .promo-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .endereco-box{
-            text-align: start;
-        }
-
-        .promo-circle {
-            background-color: #fff;
-            width: 160px;
-            height: 160px;
-            border-radius: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            font-size: 14px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: transform 0.2s, background-color 0.2s;
-        }
-
-        .promo-circle:hover {
-            transform: scale(1.1);
-            background-color: #FF4D6D;
-        }
-
-        .promo-circle img {
             width: 150px;
-            height: 150px;
-            border-radius: 100%;
         }
 
-        .promo-text {
-            margin-top: 30px;
-            font-size: 14px;
-            line-height: 1.4;
-        }
-
+        /* Status */
         .status-wrapper {
             position: fixed;
             top: 20px;
             left: 20px;
             z-index: 1000;
             text-align: left;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: bold;
         }
 
@@ -88,10 +42,9 @@
             display: inline-block;
             background-color: #900;
             color: #fff;
-            padding: 8px 12px;
+            padding: 6px 10px;
             border-radius: 8px;
             margin-bottom: 4px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
 
         .status-open {
@@ -102,32 +55,223 @@
             background-color: #990000;
         }
 
-        .status-text {
-            color: #fff;
-        }
-
+        /* Endereço */
         .endereco-wrapper {
             position: fixed;
             top: 20px;
             right: 20px;
             z-index: 1000;
-            text-align: right;
-            font-size: 14px;
-            font-weight: bold;
+            font-size: 12px;
         }
 
         .endereco-box {
-            background-color:#FF8C0A;
+            background-color: #FF8C0A;
             color: #fff;
             padding: 8px 12px;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             line-height: 1.4;
+        }
+
+        /* Banner */
+        .banner {
+            background: url('./assets/banner-pizza.jpg') center/cover no-repeat;
+            height: 90px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .banner h2 {
+            margin: 0;
+            font-size: 26px;
+            text-shadow: 1px 1px 3px #000;
+        }
+
+        .banner p {
+            margin: 5px 0;
+        }
+
+        .btn {
+            background-color: #ff7043;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            color: #fff;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+
+        /* Promoções circulares */
+        .promo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            gap: 40px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .promo-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .promo-circle {
+            background-color: #fff;
+            width: 160px;
+            height: 160px;
+            border-radius: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #b71c1c;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s;
+            padding: 5px;
+        }
+
+        .promo-circle:hover {
+            transform: scale(1.1);
+            background-color: #FF4D6D;
+            color: #fff;
+        }
+
+        .promo-circle img {
+            width: 150px;
+            height: 150px;
+            border-radius: 100%;
+            /* margin-bottom: 10px; */
+        }
+
+        .promo-text {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        /* Conteúdo principal */
+        .section {
+            background-color: #fff;
+            color: #333;
+            padding: 20px;
+        }
+
+        .section h3 {
+            margin-top: 0;
+        }
+
+        .destaques {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .destaques img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: 2px solid #c62828;
+        }
+
+        .categorias {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .categorias button {
+            background-color: #eee;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .categorias button.active {
+            background-color: #c62828;
+            color: #fff;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+        }
+
+        .card {
+            background-color: #fafafa;
+            border-radius: 8px;
+            text-align: center;
+            padding: 10px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 50%;
+        }
+
+        .card .preco {
+            background-color: #e53935;
+            color: #fff;
+            font-size: 12px;
+            padding: 2px 6px;
+            border-radius: 12px;
+            position: relative;
+            top: -10px;
+            left: 40px;
+        }
+
+        .card p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+        .cardapio {
+            background-color: #fff;
+            color: #333;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 8px;
+        }
+
+        .oferta-relampago {
+            background-color: #fff;
+            color: #333;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .oferta-relampago .timer {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            font-size: 12px;
+            background-color: #b71c1c;
+            color: #fff;
         }
     </style>
 </head>
 
 <body>
+    <header>
+        <img class="logo" src="./assets/PIZZA JARDIM.png" alt="Pizza Jardim">
+    </header>
 
     <div class="status-wrapper">
         <div id="statusBox" class="status-box">Verificando...</div>
@@ -138,39 +282,167 @@
     <div class="endereco-wrapper">
         <div class="endereco-box">
             <p><strong>Cidade:</strong> Uberlândia - MG.</p>
-
-            <p><strong>Unidade 1:</strong> Bairro Luizote - (34) 3223-3075<br>
-                Avenida José Fonseca e Silva, 1044.</p>
-
-            <p><strong>Unidade 2:</strong> Bairro São Jorge - (34) 3254-7171<br>
-                Avenida Dolorita Elias do Nascimento, 787.</p>
-
-            <p><strong>Unidade 3:</strong> Bairro Pequis - (34) 3254-2917<br>
-                Avenida Wilson Rodrigues da Silva, 70.</p>
+            <p><strong>Unidade 1:</strong> Bairro Luizote - (34) 3223-3075<br>Avenida José Fonseca e Silva, 1044.</p>
+            <p><strong>Unidade 2:</strong> Bairro São Jorge - (34) 3254-7171<br>Avenida Dolorita Elias do Nascimento,
+                787.</p>
+            <p><strong>Unidade 3:</strong> Bairro Pequis - (34) 3254-2917<br>Avenida Wilson Rodrigues da Silva, 70.</p>
         </div>
     </div>
 
-    <img class="logo" src="./assets/PIZZA JARDIM.png" alt="Pizza Jardim">
-
+    <div class="banner">
+        <h2>Promoção do Dia!</h2>
+        <h2>Peça já!!</h2>
+    </div>
     <div class="promo-container">
-        <div class="promo-item">
-            <div class="promo-circle">
-                <img src="./assets/pizza.png" alt="Pizza" class="top-pizza">
-            </div>
-            <div class="promo-text">
-                Promoção!<br>Duas pizzas M (6 pedaços)<br>por R$ 68,90.
-            </div>
+    <div class="promo-item">
+        <div class="promo-circle">
+            <img src="./assets/pizza.png" alt="Promoção Pizzas">
         </div>
-
-        <div class="promo-item">
-            <div class="promo-circle">
-                <img src="./assets/pizza.png" alt="Pizza" class="top-pizza">
-            </div>
-            <div class="promo-text">
-                Promoção!<br>Duas pizzas G (8 pedaços)<br>por R$ 87,90.
-            </div>
-        </div>
+        <p class="promo-text">Promoção!<br>Pizza M (6 pedaços)<br>por R$ 68,90.</p>
     </div>
+
+    <div class="promo-item">
+        <div class="promo-circle">
+            <img src="./assets/pizza.png" alt="Promoção Pizzas">
+        </div>
+        <p class="promo-text">Promoção!<br>Pizza G (8 pedaços)<br>por R$ 87,90.</p>
+    </div>
+</div>
+
+<div class="cardapio">
+    <h2 style="text-align: center;">Cardápio</h2>
+</div>
+
+<div class="destaques">
+    <div>
+        <img src="#" alt="Mussafrango">
+        <p>0 - Mussafrango</p>
+    </div>
+    <div>
+        <img src="#" alt="Muçarela">
+        <p>1 - Muçarela (Rosa)</p>
+    </div>
+    <div>
+        <img src="#" alt="Presunto e Muçarela">
+        <p>2 - Presunto e Muçarela (Margarida)</p>
+    </div>
+    <div>
+        <img src="#" alt="Milho">
+        <p>3 - Milho (Camélia)</p>
+    </div>
+    <div>
+        <img src="#" alt="Calabresa">
+        <p>4 - Calabresa (Miosótes)</p>
+    </div>
+    <div>
+        <img src="#" alt="Atum">
+        <p>5 - Atum (Hortência)</p>
+    </div>
+    <div>
+        <img src="#" alt="Lombo Canadense">
+        <p>6 - Lombo Canadense (Cravo)</p>
+    </div>
+    <div>
+        <img src="#" alt="Alho Frito">
+        <p>7 - Alho Frito (Lírio)</p>
+    </div>
+    <div>
+        <img src="#" alt="Bacon">
+        <p>8 - Bacon (Gerânio)</p>
+    </div>
+    <div>
+        <img src="#" alt="Palmito">
+        <p>9 - Palmito (Papoula)</p>
+    </div>
+    <div>
+        <img src="#" alt="Portuguesa">
+        <p>10 - Portuguesa (Antúrio)</p>
+    </div>
+    <div>
+        <img src="#" alt="Frango com Catupiry">
+        <p>11 - Frango com Catupiry (Magnólia) </p>
+    </div>
+    <div>
+        <img src="#" alt="Quatro Queijo">
+        <p>12 - Quatro Queijo (Gardência)</p>
+    </div>
+    <div>
+        <img src="#" alt="Franbacon">
+        <p>13 - Franbacon (Petúnia)</p>
+    </div>
+    <div>
+        <img src="#" alt="Semi Moda">
+        <p>14 - Semi Moda (Flor de Lis)</p>
+    </div>
+    <div>
+        <img src="#" alt="Frango com Palmito">
+        <p>15 - Frango com Palmito (Crisântemo)</p>
+    </div>
+    <div>
+        <img src="#" alt="Calabacon">
+        <p>16 - Calabacon (Violeta)</p>
+    </div>
+    <div>
+        <img src="#" alt="Três Carnes">
+        <p>17 - Três Carnes (Dália)</p>
+    </div>
+    <div>
+        <img src="#" alt="Strogonoff">
+        <p>18 - Strogonoff (Copo de Leite)</p>
+    </div>
+    <div>
+        <img src="#" alt="Vegetariana">
+        <p>19 - Vegetariana(Primavera)</p>
+    </div>
+    <div>
+        <img src="#" alt="Moda da Casa">
+        <p>20 - Moda da Casa (Orquídea)</p>
+    </div>
+    <div>
+        <img src="#" alt="Cupim ao Alho">
+        <p>21 - Cupim ao Alho</p>
+    </div>
+    <div>
+        <img src="#" alt="Baianinha">
+        <p>22 - Baianinha</p>
+    </div>
+    <div>
+        <img src="#" alt="Chocolate Branco">
+        <p>24 - Chocolate Branco (Beijo)</p>
+    </div>
+    <div>
+        <img src="#" alt="Chocolate ao Leite">
+        <p>25 - Chocolate ao Leite (Exória)</p>
+    </div>
+    <div>
+        <img src="#" alt="Calabresa Paulista (Sem Muçarela)">
+        <p>27 - Calabresa Paulista (Sem Muçarela)</p>
+    </div>
+    <div>
+        <img src="#" alt="Frango com Catupiry (Sem Muçarela)">
+        <p>28 - Frango com Catupiry (Sem Muçarela)</p>
+    </div>
+    <div>
+        <img src="#" alt="Calabresa e Bacon (Sem Muçarela)">
+        <p>29 - Calabresa e Bacon (Sem Muçarela)</p>
+    </div>
+    <div>
+        <img src="#" alt="Vegetais">
+        <p>30 - Vegetais</p>
+    </div>
+</div>
+
+
+    <!-- <div class="oferta-relampago">
+        <h3>Ofertas Relâmpago</h3>
+        <p>2 Pizzas Grandes por R$ 87,90</p>
+        <div class="timer" id="timer">00:00:00</div>
+        <button class="btn">Aproveitar Oferta</button>
+    </div> -->
+
+    <footer>
+        &copy; 2025 Pizzaria Jardim - Todos os direitos reservados.
+    </footer>
 
     <script>
         function verificarHorarioFuncionamento() {
@@ -184,8 +456,6 @@
             const fimMinuto = 50;
 
             const statusBox = document.getElementById("statusBox");
-            const statusLinha2 = document.getElementById("statusLinha2");
-            const statusLinha3 = document.getElementById("statusLinha3");
 
             const depoisDoInicio = (horas > inicioHora) || (horas === inicioHora && minutos >= inicioMinuto);
             const antesDoFim = (horas < fimHora) || (horas === fimHora && minutos <= fimMinuto);
@@ -199,13 +469,23 @@
                 statusBox.classList.add("status-closed");
                 statusBox.classList.remove("status-open");
             }
+        }
 
-            statusLinha2.textContent = "Horário de funcionamento: 18:00 às 23:00";
-            statusLinha3.textContent = "Pedido mínimo: R$ 20,00";
+        function iniciarTimer() {
+            let tempo = 23 * 60 * 60 + 44 * 60 + 31;
+            const timerEl = document.getElementById('timer');
+            setInterval(() => {
+                const horas = String(Math.floor(tempo / 3600)).padStart(2, '0');
+                const minutos = String(Math.floor((tempo % 3600) / 60)).padStart(2, '0');
+                const segundos = String(tempo % 60).padStart(2, '0');
+                timerEl.textContent = `${horas}:${minutos}:${segundos}`;
+                if (tempo > 0) tempo--;
+            }, 1000);
         }
 
         verificarHorarioFuncionamento();
         setInterval(verificarHorarioFuncionamento, 60000);
+        iniciarTimer();
     </script>
 </body>
 
