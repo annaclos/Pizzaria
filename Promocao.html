@@ -12,39 +12,40 @@
             color: #fff;
         }
 
-        /* Cabeçalho */
+
         header {
-            background-color: #b71c1c;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 10px;
+            background-color: #7c0909;
+            padding: 20px;
             position: relative;
-            height: 220px;
+        }
+
+        .topo-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
         }
 
         .logo {
             width: 150px;
         }
 
-        /* Status */
         .status-wrapper {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            z-index: 1000;
-            text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             font-size: 13px;
             font-weight: bold;
+            color: #fff;
         }
 
         .status-box {
             display: inline-block;
             background-color: #900;
             color: #fff;
-            padding: 6px 10px;
+            padding: 6px 12px;
             border-radius: 8px;
             margin-bottom: 4px;
+            width: fit-content;
         }
 
         .status-open {
@@ -52,10 +53,9 @@
         }
 
         .status-closed {
-            background-color: #990000;
+            background-color: #bd0404;
         }
 
-        /* Endereço */
         .endereco-wrapper {
             position: fixed;
             top: 20px;
@@ -72,7 +72,6 @@
             line-height: 1.4;
         }
 
-        /* Banner */
         .banner {
             background: url('./assets/banner-pizza.jpg') center/cover no-repeat;
             height: 90px;
@@ -103,7 +102,6 @@
             margin-top: 5px;
         }
 
-        /* Promoções circulares */
         .promo-container {
             display: flex;
             justify-content: center;
@@ -155,7 +153,6 @@
             font-size: 14px;
         }
 
-        /* Conteúdo principal */
         .section {
             background-color: #fff;
             color: #333;
@@ -236,6 +233,7 @@
             margin: 5px 0;
             font-size: 14px;
         }
+
         .cardapio {
             background-color: #fff;
             color: #333;
@@ -265,180 +263,244 @@
             background-color: #b71c1c;
             color: #fff;
         }
+
+        .login-button-wrapper {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .login-button {
+            background-color: #fff;
+            color: #b71c1c;
+            text-decoration: none;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+            display: inline-block;
+        }
+
+        .login-button:hover {
+            background-color: #b71c1c;
+            color: #fff;
+        }
+
+        .menu-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            width: 100%;
+            padding: 15px 0;
+            background-color: #7c0909;
+            box-sizing: border-box;
+        }
+
+        .menu-btn {
+            background-color: #7c0909;
+            color: #fff;
+            border: 2px solid #fff;
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+            min-width: 140px;
+            text-align: center;
+        }
+
+        .menu-btn:hover {
+            background-color: #fff;
+            color: #7c0909;
+        }
     </style>
 </head>
 
 <body>
     <header>
-        <img class="logo" src="./assets/PIZZA JARDIM.png" alt="Pizza Jardim">
-    </header>
+        <div class="topo-container">
+            <img class="logo" src="./assets/PIZZA JARDIM.png" alt="Pizza Jardim">
 
-    <div class="status-wrapper">
-        <div id="statusBox" class="status-box">Verificando...</div>
-        <div class="status-text" id="statusLinha2">18:00 às 23:00</div>
-        <div class="status-text" id="statusLinha3">Pedido mínimo: R$ 20,00</div>
-    </div>
+            <div class="status-wrapper">
+                <div id="statusBox" class="status-box">Verificando...</div>
+                <div class="status-text" id="statusLinha2">18:00 às 23:00</div>
+                <div class="status-text" id="statusLinha3">Pedido mínimo: R$ 20,00</div>
+            </div>
+              <div class="menu-buttons">
+            <button onclick="scrollToSection('Cardapio')" class="menu-btn">Cardápio</button>
+            <button onclick="scrollToSection('Bebidas')" class="menu-btn">Bebidas</button>
+            <button onclick="scrollToSection('promo')" class="menu-btn">Promoções</button>
+        </div>
+        </div>
+      
 
-    <div class="endereco-wrapper">
+
+        <div class="login-button-wrapper">
+            <a href="index.html" class="login-button">Entre ou Cadastre-se</a>
+        </div>
+
+
+        <!-- <div class="endereco-wrapper">
         <div class="endereco-box">
             <p><strong>Cidade:</strong> Uberlândia - MG.</p>
             <p><strong>Unidade 1:</strong> Bairro Luizote - (34) 3223-3075<br>Avenida José Fonseca e Silva, 1044.</p>
-            <p><strong>Unidade 2:</strong> Bairro São Jorge - (34) 3254-7171<br>Avenida Dolorita Elias do Nascimento,
-                787.</p>
+            <p><strong>Unidade 2:</strong> Bairro São Jorge - (34) 3254-7171<br>Avenida Dolorita Elias do Nascimento, 787.</p>
             <p><strong>Unidade 3:</strong> Bairro Pequis - (34) 3254-2917<br>Avenida Wilson Rodrigues da Silva, 70.</p>
         </div>
-    </div>
+    </div> -->
+        <!-- Botão de login -->
+    </header>
+
+    </header>
+
 
     <div class="banner">
         <h2>Promoção do Dia!</h2>
         <h2>Peça já!!</h2>
     </div>
     <div class="promo-container">
-    <div class="promo-item">
-        <div class="promo-circle">
-            <img src="./assets/pizza.png" alt="Promoção Pizzas">
+        <div class="promo-item">
+            <div class="promo-circle">
+                <img src="./assets/pizza.png" alt="Promoção Pizzas">
+            </div>
+            <p class="promo-text">Promoção!<br>Pizza M (6 pedaços)<br>por R$ 68,90.</p>
         </div>
-        <p class="promo-text">Promoção!<br>Pizza M (6 pedaços)<br>por R$ 68,90.</p>
-    </div>
 
-    <div class="promo-item">
-        <div class="promo-circle">
-            <img src="./assets/pizza.png" alt="Promoção Pizzas">
+        <div class="promo-item">
+            <div class="promo-circle">
+                <img src="./assets/pizza.png" alt="Promoção Pizzas">
+            </div>
+            <p class="promo-text">Promoção!<br>Pizza G (8 pedaços)<br>por R$ 87,90.</p>
         </div>
-        <p class="promo-text">Promoção!<br>Pizza G (8 pedaços)<br>por R$ 87,90.</p>
     </div>
-</div>
 
-<div class="cardapio">
-    <h2 style="text-align: center;">Cardápio</h2>
-</div>
+    <div class="cardapio">
+        <h2 style="text-align: center;">Cardápio</h2>
+    </div>
 
-<div class="destaques">
-    <div>
-        <img src="#" alt="Mussafrango">
-        <p>0 - Mussafrango</p>
+    <div class="destaques">
+        <div>
+            <img src="#" alt="Muçafrango">
+            <p>0 - Muçafrango</p>
+        </div>
+        <div>
+            <img src="#" alt="Muçarela">
+            <p>1 - Muçarela (Rosa)</p>
+        </div>
+        <div>
+            <img src="#" alt="Presunto e Muçarela">
+            <p>2 - Presunto e Muçarela (Margarida)</p>
+        </div>
+        <div>
+            <img src="#" alt="Milho">
+            <p>3 - Milho (Camélia)</p>
+        </div>
+        <div>
+            <img src="#" alt="Calabresa">
+            <p>4 - Calabresa (Miosótes)</p>
+        </div>
+        <div>
+            <img src="#" alt="Atum">
+            <p>5 - Atum (Hortência)</p>
+        </div>
+        <div>
+            <img src="#" alt="Lombo Canadense">
+            <p>6 - Lombo Canadense (Cravo)</p>
+        </div>
+        <div>
+            <img src="#" alt="Alho Frito">
+            <p>7 - Alho Frito (Lírio)</p>
+        </div>
+        <div>
+            <img src="#" alt="Bacon">
+            <p>8 - Bacon (Gerânio)</p>
+        </div>
+        <div>
+            <img src="#" alt="Palmito">
+            <p>9 - Palmito (Papoula)</p>
+        </div>
+        <div>
+            <img src="#" alt="Portuguesa">
+            <p>10 - Portuguesa (Antúrio)</p>
+        </div>
+        <div>
+            <img src="#" alt="Frango com Catupiry">
+            <p>11 - Frango com Catupiry (Magnólia) </p>
+        </div>
+        <div>
+            <img src="#" alt="Quatro Queijo">
+            <p>12 - Quatro Queijo (Gardência)</p>
+        </div>
+        <div>
+            <img src="#" alt="Franbacon">
+            <p>13 - Franbacon (Petúnia)</p>
+        </div>
+        <div>
+            <img src="#" alt="Semi Moda">
+            <p>14 - Semi Moda (Flor de Lis)</p>
+        </div>
+        <div>
+            <img src="#" alt="Frango com Palmito">
+            <p>15 - Frango com Palmito (Crisântemo)</p>
+        </div>
+        <div>
+            <img src="#" alt="Calabacon">
+            <p>16 - Calabacon (Violeta)</p>
+        </div>
+        <div>
+            <img src="#" alt="Três Carnes">
+            <p>17 - Três Carnes (Dália)</p>
+        </div>
+        <div>
+            <img src="#" alt="Strogonoff">
+            <p>18 - Strogonoff (Copo de Leite)</p>
+        </div>
+        <div>
+            <img src="#" alt="Vegetariana">
+            <p>19 - Vegetariana(Primavera)</p>
+        </div>
+        <div>
+            <img src="#" alt="Moda da Casa">
+            <p>20 - Moda da Casa (Orquídea)</p>
+        </div>
+        <div>
+            <img src="#" alt="Cupim ao Alho">
+            <p>21 - Cupim ao Alho</p>
+        </div>
+        <div>
+            <img src="#" alt="Baianinha">
+            <p>22 - Baianinha</p>
+        </div>
+        <div>
+            <img src="#" alt="Chocolate Branco">
+            <p>24 - Chocolate Branco (Beijo)</p>
+        </div>
+        <div>
+            <img src="#" alt="Chocolate ao Leite">
+            <p>25 - Chocolate ao Leite (Exória)</p>
+        </div>
+        <div>
+            <img src="#" alt="Calabresa Paulista (Sem Muçarela)">
+            <p>27 - Calabresa Paulista (Sem Muçarela)</p>
+        </div>
+        <div>
+            <img src="#" alt="Frango com Catupiry (Sem Muçarela)">
+            <p>28 - Frango com Catupiry (Sem Muçarela)</p>
+        </div>
+        <div>
+            <img src="#" alt="Calabresa e Bacon (Sem Muçarela)">
+            <p>29 - Calabresa e Bacon (Sem Muçarela)</p>
+        </div>
+        <div>
+            <img src="#" alt="Vegetais">
+            <p>30 - Vegetais</p>
+        </div>
     </div>
-    <div>
-        <img src="#" alt="Muçarela">
-        <p>1 - Muçarela (Rosa)</p>
-    </div>
-    <div>
-        <img src="#" alt="Presunto e Muçarela">
-        <p>2 - Presunto e Muçarela (Margarida)</p>
-    </div>
-    <div>
-        <img src="#" alt="Milho">
-        <p>3 - Milho (Camélia)</p>
-    </div>
-    <div>
-        <img src="#" alt="Calabresa">
-        <p>4 - Calabresa (Miosótes)</p>
-    </div>
-    <div>
-        <img src="#" alt="Atum">
-        <p>5 - Atum (Hortência)</p>
-    </div>
-    <div>
-        <img src="#" alt="Lombo Canadense">
-        <p>6 - Lombo Canadense (Cravo)</p>
-    </div>
-    <div>
-        <img src="#" alt="Alho Frito">
-        <p>7 - Alho Frito (Lírio)</p>
-    </div>
-    <div>
-        <img src="#" alt="Bacon">
-        <p>8 - Bacon (Gerânio)</p>
-    </div>
-    <div>
-        <img src="#" alt="Palmito">
-        <p>9 - Palmito (Papoula)</p>
-    </div>
-    <div>
-        <img src="#" alt="Portuguesa">
-        <p>10 - Portuguesa (Antúrio)</p>
-    </div>
-    <div>
-        <img src="#" alt="Frango com Catupiry">
-        <p>11 - Frango com Catupiry (Magnólia) </p>
-    </div>
-    <div>
-        <img src="#" alt="Quatro Queijo">
-        <p>12 - Quatro Queijo (Gardência)</p>
-    </div>
-    <div>
-        <img src="#" alt="Franbacon">
-        <p>13 - Franbacon (Petúnia)</p>
-    </div>
-    <div>
-        <img src="#" alt="Semi Moda">
-        <p>14 - Semi Moda (Flor de Lis)</p>
-    </div>
-    <div>
-        <img src="#" alt="Frango com Palmito">
-        <p>15 - Frango com Palmito (Crisântemo)</p>
-    </div>
-    <div>
-        <img src="#" alt="Calabacon">
-        <p>16 - Calabacon (Violeta)</p>
-    </div>
-    <div>
-        <img src="#" alt="Três Carnes">
-        <p>17 - Três Carnes (Dália)</p>
-    </div>
-    <div>
-        <img src="#" alt="Strogonoff">
-        <p>18 - Strogonoff (Copo de Leite)</p>
-    </div>
-    <div>
-        <img src="#" alt="Vegetariana">
-        <p>19 - Vegetariana(Primavera)</p>
-    </div>
-    <div>
-        <img src="#" alt="Moda da Casa">
-        <p>20 - Moda da Casa (Orquídea)</p>
-    </div>
-    <div>
-        <img src="#" alt="Cupim ao Alho">
-        <p>21 - Cupim ao Alho</p>
-    </div>
-    <div>
-        <img src="#" alt="Baianinha">
-        <p>22 - Baianinha</p>
-    </div>
-    <div>
-        <img src="#" alt="Chocolate Branco">
-        <p>24 - Chocolate Branco (Beijo)</p>
-    </div>
-    <div>
-        <img src="#" alt="Chocolate ao Leite">
-        <p>25 - Chocolate ao Leite (Exória)</p>
-    </div>
-    <div>
-        <img src="#" alt="Calabresa Paulista (Sem Muçarela)">
-        <p>27 - Calabresa Paulista (Sem Muçarela)</p>
-    </div>
-    <div>
-        <img src="#" alt="Frango com Catupiry (Sem Muçarela)">
-        <p>28 - Frango com Catupiry (Sem Muçarela)</p>
-    </div>
-    <div>
-        <img src="#" alt="Calabresa e Bacon (Sem Muçarela)">
-        <p>29 - Calabresa e Bacon (Sem Muçarela)</p>
-    </div>
-    <div>
-        <img src="#" alt="Vegetais">
-        <p>30 - Vegetais</p>
-    </div>
-</div>
-
-
-    <!-- <div class="oferta-relampago">
-        <h3>Ofertas Relâmpago</h3>
-        <p>2 Pizzas Grandes por R$ 87,90</p>
-        <div class="timer" id="timer">00:00:00</div>
-        <button class="btn">Aproveitar Oferta</button>
-    </div> -->
 
     <footer>
         &copy; 2025 Pizzaria Jardim - Todos os direitos reservados.
