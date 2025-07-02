@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <title>Pizzaria Jardim - Promoções</title>
     <style>
         body {
@@ -318,6 +319,57 @@
             background-color: #fff;
             color: #7c0909;
         }
+
+        .container-cards {
+            margin: 20px auto;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 24px 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            font-size: 18px;
+            color: #333;
+            width: 300px;
+            text-align: center;
+        }
+
+        .linha {
+            margin-bottom: 18px;
+        }
+
+        .linha:last-child {
+            margin-bottom: 0;
+        }
+
+        .titulo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            margin-bottom: 6px;
+            font-size: 20px;
+        }
+
+        .titulo i {
+            margin-right: 8px;
+            color: #444;
+            font-size: 20px;
+        }
+
+        .descricao {
+            color: #555;
+            line-height: 1.6;
+            font-size: 17px;
+        }
     </style>
 </head>
 
@@ -328,33 +380,18 @@
 
             <div class="status-wrapper">
                 <div id="statusBox" class="status-box">Verificando...</div>
-                <div class="status-text" id="statusLinha2">18:00 às 23:00</div>
-                <div class="status-text" id="statusLinha3">Pedido mínimo: R$ 20,00</div>
+                <!-- <div class="status-text" id="statusLinha2">18:00 às 23:00</div> -->
+                <!-- <div class="status-text" id="statusLinha3">Pedido mínimo: R$ 20,00</div> -->
             </div>
-              <div class="menu-buttons">
-            <button onclick="scrollToSection('Cardapio')" class="menu-btn">Cardápio</button>
-            <button onclick="scrollToSection('Bebidas')" class="menu-btn">Bebidas</button>
-            <button onclick="scrollToSection('promo')" class="menu-btn">Promoções</button>
+            <div class="menu-buttons">
+                <button onclick="scrollToSection('Cardapio')" class="menu-btn">Cardápio</button>
+                <button onclick="scrollToSection('Bebidas')" class="menu-btn">Bebidas</button>
+                <button onclick="scrollToSection('promo')" class="menu-btn">Promoções</button>
+            </div>
+            <div class="login-button-wrapper">
+                <a href="index.html" class="login-button">Entre ou Cadastre-se</a>
+            </div>
         </div>
-        </div>
-      
-
-
-        <div class="login-button-wrapper">
-            <a href="index.html" class="login-button">Entre ou Cadastre-se</a>
-        </div>
-
-
-        <!-- <div class="endereco-wrapper">
-        <div class="endereco-box">
-            <p><strong>Cidade:</strong> Uberlândia - MG.</p>
-            <p><strong>Unidade 1:</strong> Bairro Luizote - (34) 3223-3075<br>Avenida José Fonseca e Silva, 1044.</p>
-            <p><strong>Unidade 2:</strong> Bairro São Jorge - (34) 3254-7171<br>Avenida Dolorita Elias do Nascimento, 787.</p>
-            <p><strong>Unidade 3:</strong> Bairro Pequis - (34) 3254-2917<br>Avenida Wilson Rodrigues da Silva, 70.</p>
-        </div>
-    </div> -->
-        <!-- Botão de login -->
-    </header>
 
     </header>
 
@@ -368,14 +405,14 @@
             <div class="promo-circle">
                 <img src="./assets/pizza.png" alt="Promoção Pizzas">
             </div>
-            <p class="promo-text">Promoção!<br>Pizza M (6 pedaços)<br>por R$ 68,90.</p>
+            <p class="promo-text">Pizza M (6 pedaços)<br>por R$ 68,90.</p>
         </div>
 
         <div class="promo-item">
             <div class="promo-circle">
                 <img src="./assets/pizza.png" alt="Promoção Pizzas">
             </div>
-            <p class="promo-text">Promoção!<br>Pizza G (8 pedaços)<br>por R$ 87,90.</p>
+            <p class="promo-text">Pizza G (8 pedaços)<br>por R$ 87,90.</p>
         </div>
     </div>
 
@@ -500,6 +537,99 @@
             <img src="#" alt="Vegetais">
             <p>30 - Vegetais</p>
         </div>
+    </div>
+    <div class="container-cards">
+        <!-- Primeiro Card-->
+        <div class="card">
+            <div class="linha">
+                <div class="titulo">
+                    <i class="fas fa-clock"></i>
+                    <span>Tempo médio para entrega</span>
+                </div>
+                <div class="descricao">50 minutos</div>
+            </div>
+
+            <div class="linha">
+                <div class="titulo">
+                    <i class="fas fa-clock"></i>
+                    <span>Tempo médio para retirada</span>
+                </div>
+                <div class="descricao">30 minutos</div>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+            <div class="linha">
+                <div class="titulo">
+                    <i class="fas fa-credit-card"></i>
+                    <span>Formas de pagamento:</span>
+                </div>
+                <div class="descricao">
+                    <ul>
+                        <li>Dinheiro</li>
+                        <li>Cartão de crédito</li>
+                        <li>Cartão de débito</li>
+                        <li>Pix</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+            <div class="linha">
+                <div class="titulo">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>Peça também pelo telefone:</span>
+                </div>
+                <div class="descricao">
+                    <ul>
+                        <li>Unidades:</li>
+                        <li>São Jorge: (34) 3254-7171</li>
+                        <li>Luizote: (34) 3223-3075</li>
+                        <li>Pequis: (34) 3254-2917</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="card">
+            <div class="linha">
+                <div class="titulo">
+                    <i class="fas fa-store"></i>
+                    <span>Onde nos encontrar</span>
+                </div>
+                <div class="descricao">
+                    <p><strong>Cidade:</strong> Uberlândia - MG.</p>
+                    <ul>
+                        <li><strong>São Jorge: </strong>Avenida Dolorita Elias do Nascimento, 787.</li>
+                        <li><strong>Luizote: </strong>Avenida José Fonseca e Silva, 1044.</li>
+                        <li><strong>Pequis: </strong>Pequis: Avenida Wilson Rodrigues da Silva, 70.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--Card cinco-->
+        <div class="card">
+            <div class="linha">
+                <div class="titulo">
+                    <i class="fas fa-business-time"></i>
+                    <span>Nosso horário de Funcionamento</span>
+                </div>
+                <div class="descricao">
+                    <ul>
+                        <li><strong>Segunda a Sexta:</strong> 18:20 às 22:50</li>
+                        <li><strong>Sábados:</strong> 18:00 às 23:00</li>
+                        <li><strong>Domingos:</strong> 18:00 às 23:00</li>
+                        <li><strong>Feriados:</strong> 18:00 às 23:00</li>
+                    </ul>
+                    <strong>Para melhor atendimento estamos abertos todos os dias da semana</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
     </div>
 
     <footer>
