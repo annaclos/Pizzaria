@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <title>Pizzaria Jardim - Promoções</title>
+    <title>Pizzaria Jardim - Pagina Inicial</title>
     <style>
         body {
             margin: 0;
@@ -12,7 +12,6 @@
             background-color: #B71C1C;
             color: #fff;
         }
-
 
         header {
             background-color: #7c0909;
@@ -34,7 +33,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            font-size: 13px;
+            font-size: 17px;
             font-weight: bold;
             color: #fff;
         }
@@ -243,7 +242,7 @@
             border-radius: 8px;
         }
 
-        .oferta-relampago {
+        /* .oferta-relampago {
             background-color: #fff;
             color: #333;
             margin: 20px;
@@ -255,7 +254,7 @@
         .oferta-relampago .timer {
             font-size: 20px;
             margin: 10px 0;
-        }
+        } */
 
         footer {
             text-align: center;
@@ -384,9 +383,11 @@
                 <!-- <div class="status-text" id="statusLinha3">Pedido mínimo: R$ 20,00</div> -->
             </div>
             <div class="menu-buttons">
-                <button onclick="scrollToSection('Cardapio')" class="menu-btn">Cardápio</button>
-                <button onclick="scrollToSection('Bebidas')" class="menu-btn">Bebidas</button>
-                <button onclick="scrollToSection('promo')" class="menu-btn">Promoções</button>
+                <div class="menu-buttons">
+                    <a href="cardapio.html" class="menu-btn">Cardápio</a>
+                    <a href="bebidas.html" class="menu-btn">Bebidas</a>
+                    <a href="promocoes.html" class="menu-btn">Promoções</a>
+                </div>
             </div>
             <div class="login-button-wrapper">
                 <a href="index.html" class="login-button">Entre ou Cadastre-se</a>
@@ -416,7 +417,7 @@
         </div>
     </div>
 
-    <div class="cardapio">
+    <!-- <div class="cardapio">
         <h2 style="text-align: center;">Cardápio</h2>
     </div>
 
@@ -537,7 +538,7 @@
             <img src="#" alt="Vegetais">
             <p>30 - Vegetais</p>
         </div>
-    </div>
+    </div> -->
     <div class="container-cards">
         <!-- Primeiro Card-->
         <div class="card">
