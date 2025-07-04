@@ -33,10 +33,10 @@
             position: absolute;
             top: 20px;
             left: 20px;
-            background-color: #fff; /* mesmo fundo do body */
+            background-color: #fff;
             color: #4c0c0c;
             border: 2px solid #4c0c0c;
-            border-radius: 25px; /* ovalado */
+            border-radius: 25px; 
             padding: 10px 20px;
             font-size: 14px;
             cursor: pointer;
@@ -47,6 +47,51 @@
             background-color: #990202;
             color: #fff;
         }
+        .promo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            gap: 70px;
+            margin: 50px 0;
+            flex-wrap: wrap;
+        }
+
+        .promo-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .promo-circle {
+            background-color: #fff;
+            width: 200px;
+            height: 200px;
+            border-radius: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #b71c1c;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s;
+            padding: 5px;
+        }
+
+        .promo-circle:hover {
+            transform: scale(1.1);
+            background-color: #FF4D6D;
+            color: #fff;
+        }
+
+        .promo-circle img {
+            width: 190px;
+            height: 190px;
+            border-radius: 100%;
+            /* margin-bottom: 10px; */
+        }
     </style>
 </head>
 
@@ -56,6 +101,27 @@
     </div>
     <h1>Promoções</h1>
     <h3>Confira nossas promoções imperdíveis!</h3>
+    <div class="promo-container">
+        <div class="promo-item">
+            <div class="promo-circle">
+                <img src="./assets/pizza.png" alt="Promoção Pizzas">
+            </div>
+            <p class="promo-text">Pizzas de 6 pedaços em dobro!!<br>por R$ 68,90.</p>
+        </div>
+
+        <div class="promo-item">
+            <div class="promo-circle">
+                <img src="./assets/pizza.png" alt="Promoção Pizzas">
+            </div>
+            <p class="promo-text">Pizzas de 8 pedaços em dobro!!<br>por R$ 87,90.</p>
+        </div>
+         <div class="promo-item">
+            <div class="promo-circle">
+                <img src="./assets/pizza.png" alt="Promoção Pizzas">
+            </div>
+            <p class="promo-text">Refrigerante ou borda recheada de brinde!!<br>Valores variados!</p>
+        </div>
+    </div>
 </body>
 
 </html>
