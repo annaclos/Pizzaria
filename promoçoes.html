@@ -27,9 +27,9 @@
             margin-top: 5px;
         }
 
-        
+
         .btn-voltar {
-            position: fixed; 
+            position: fixed;
             top: 20px;
             left: 20px;
             background-color: #fff;
@@ -49,10 +49,8 @@
         }
 
         .mid-container {
-            background-color: #ebd7ae;
+            background-color: transparent;
             padding: 20px;
-            border-radius: 10px;
-            color: white;
             margin: 80px auto 20px;
             max-width: 1200px;
         }
@@ -71,7 +69,17 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            max-width: 220px;
+            max-width: 250px;
+            background-color: #2a2a2a;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s;
+            color: #000;
+        }
+
+        .promo-item:hover {
+            transform: scale(1.03);
         }
 
         .promo-circle {
@@ -104,7 +112,7 @@
         }
 
         p.promo-text {
-            color: #000;
+            color: #ffffff;
             margin: 8px 0 4px;
             font-weight: bold;
             font-size: 14px;
@@ -171,7 +179,7 @@
 </head>
 
 <body>
-    <!-- Botão voltar fixo no topo esquerdo, fora do fluxo -->
+    <!-- Botão voltar-->
     <button class="btn-voltar" onclick="window.location.href='paginaInicial.html'">Voltar para página inicial</button>
 
     <h1>Promoções</h1>
@@ -184,7 +192,7 @@
                 <div class="promo-circle" onclick="openPromoModal(1)">
                     <img src="./assets/pizza.png" alt="Promoção Pizzas">
                 </div>
-                <p class="promo-text">Pizzas de 6 pedaços em dobro!!<br>por R$ 68,90.</p><br>
+                <br><p class="promo-text">Pizzas de 6 pedaços em dobro!!<br>por R$ 68,90.</p><br>
                 <button class="promo-btn" onclick="openPromoModal(1)">Quero essa!!</button>
             </div>
 
@@ -193,7 +201,7 @@
                 <div class="promo-circle" onclick="openPromoModal(2)">
                     <img src="./assets/pizza.png" alt="Promoção Pizzas">
                 </div>
-                <p class="promo-text">Pizzas de 8 pedaços em dobro!!<br>por R$ 87,90.</p><br>
+                <br><p class="promo-text">Pizzas de 8 pedaços em dobro!!<br>por R$ 87,90.</p><br>
                 <button class="promo-btn" onclick="openPromoModal(2)">Essa me satisfaz!</button>
             </div>
 
@@ -202,7 +210,7 @@
                 <div class="promo-circle" onclick="openPromoModal(3)">
                     <img src="./assets/pizza.png" alt="Promoção Pizzas">
                 </div>
-                <p class="promo-text">Refrigerante ou borda recheada de brinde!!<br>Valores variados!</p>
+                <br><p class="promo-text">Refrigerante ou borda recheada de brinde!!<br>Valores variados!</p>
                 <button class="promo-btn" onclick="window.location.href='cardapio.html'">A melhor!!</button>
             </div>
         </div>
