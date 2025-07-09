@@ -379,6 +379,88 @@
             margin: 20px auto;
             max-width: 1200px;
         }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            z-index: 2000;
+            /* On top */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgba(0, 0, 0, 0.6);
+            /* Black with opacity */
+        }
+
+        .modal-content {
+            background-color: #2A2A2A;
+            margin: 10% auto;
+            padding: 20px 30px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 450px;
+            color: #ffffff;
+            position: relative;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 28px;
+            font-weight: bold;
+            color: #b71c1c;
+            cursor: pointer;
+            border: none;
+            background: transparent;
+        }
+
+        .close-btn:hover {
+            color: #ff4d6d;
+        }
+
+        .modal-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .modal-description {
+            background-color: #2a2a2a;
+            margin: 10% auto;
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 400px;
+            color: #fff;
+            box-shadow: 0 0 15px #000;
+            text-align: left;
+        }
+
+        .modal-action-btn {
+            background-color: #fff;
+            color: #000000;
+            border: 2px solid #fff;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .modal-action-btn:hover {
+            background-color: #4C0C0C;
+            color: #ffffff;
+        }
     </style>
 </head>
 
@@ -407,167 +489,189 @@
     </header>
 
     <div class="mid-container">
-            <div class="banner">
-                <h2>Promoção do Dia!</h2>
-                <h2>Peça já!!</h2>
-            </div>
-            <div class="promo-container">
-                <div class="promo-item">
-                    <div class="promo-circle">
-                        <img src="./assets/pizza.png" alt="Promoção Pizzas">
-                    </div>
-                    <p class="promo-text">Pizza M (6 pedaços)<br>por R$ 68,90.</p>
+        <div class="banner">
+            <h2>Promoção do Dia!</h2>
+            <h2>Peça já!!</h2>
+        </div>
+        <div class="promo-container">
+            <div class="promo-item">
+                <div class="promo-circle" data-promo="m">
+                    <img src="./assets/pizza.png" alt="Promoção Pizzas">
                 </div>
-
-                <div class="promo-item">
-                    <div class="promo-circle">
-                        <img src="./assets/pizza.png" alt="Promoção Pizzas">
-                    </div>
-                    <p class="promo-text">Pizza G (8 pedaços)<br>por R$ 87,90.</p>
-                </div>
+                <p class="promo-text">Pizza M (6 pedaços)<br>por R$ 68,90.</p>
             </div>
 
-            <div class="container-cards">
-                <!-- Primeiro Card-->
-                <div class="card">
-                    <div class="linha">
-                        <div class="titulo">
-                            <i class="fas fa-clock"></i>
-                            <span>Tempo médio para entrega</span>
-                        </div>
-                        <div class="descricao">50 minutos</div>
-                    </div>
-
-                    <div class="linha">
-                        <div class="titulo">
-                            <i class="fas fa-clock"></i>
-                            <span>Tempo médio para retirada</span>
-                        </div>
-                        <div class="descricao">30 minutos</div>
-                    </div>
+            <div class="promo-item">
+                <div class="promo-circle" data-promo="g">
+                    <img src="./assets/pizza.png" alt="Promoção Pizzas">
                 </div>
+                <p class="promo-text">Pizza G (8 pedaços)<br>por R$ 87,90.</p>
+            </div>
+        </div>
 
-                <!-- Card 2 -->
-                <div class="card">
-                    <div class="linha">
-                        <div class="titulo">
-                            <i class="fas fa-credit-card"></i>
-                            <span>Formas de pagamento:</span>
-                        </div>
-                        <div class="descricao">
-                            <ul>
-                                <li>Dinheiro</li>
-                                <li>Cartão de crédito</li>
-                                <li>Cartão de débito</li>
-                                <li>Pix</li>
-                            </ul>
-                        </div>
+        <div class="container-cards">
+            <!-- Primeiro Card-->
+            <div class="card">
+                <div class="linha">
+                    <div class="titulo">
+                        <i class="fas fa-clock"></i>
+                        <span>Tempo médio para entrega</span>
                     </div>
+                    <div class="descricao">50 minutos</div>
                 </div>
 
-                <!-- Card 3 -->
-                <div class="card">
-                    <div class="linha">
-                        <div class="titulo">
-                            <i class="fas fa-phone-alt"></i>
-                            <span>Peça também pelo telefone:</span>
-                        </div>
-                        <div class="descricao">
-                            <ul>
-                                <li>Unidades:</li>
-                                <li>São Jorge: (34) 3254-7171</li>
-                                <li>Luizote: (34) 3223-3075</li>
-                                <li>Pequis: (34) 3254-2917</li>
-                            </ul>
-                        </div>
+                <div class="linha">
+                    <div class="titulo">
+                        <i class="fas fa-clock"></i>
+                        <span>Tempo médio para retirada</span>
+                    </div>
+                    <div class="descricao">30 minutos</div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <div class="linha">
+                    <div class="titulo">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Formas de pagamento:</span>
+                    </div>
+                    <div class="descricao">
+                        <ul>
+                            <li>Dinheiro</li>
+                            <li>Cartão de crédito</li>
+                            <li>Cartão de débito</li>
+                            <li>Pix</li>
+                        </ul>
                     </div>
                 </div>
-                <!-- Card 4 -->
-                <div class="card">
-                    <div class="linha">
-                        <div class="titulo">
-                            <i class="fas fa-store"></i>
-                            <span>Onde nos encontrar</span>
-                        </div>
-                        <div class="descricao">
-                            <p><strong>Cidade:</strong> Uberlândia - MG.</p>
-                            <ul>
-                                <li><strong>São Jorge: </strong>Avenida Dolorita Elias do Nascimento, 787.</li>
-                                <li><strong>Luizote: </strong>Avenida José Fonseca e Silva, 1044.</li>
-                                <li><strong>Pequis: </strong>Pequis: Avenida Wilson Rodrigues da Silva, 70.</li>
-                            </ul>
-                        </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <div class="linha">
+                    <div class="titulo">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>Peça também pelo telefone:</span>
+                    </div>
+                    <div class="descricao">
+                        <ul>
+                            <li>Unidades:</li>
+                            <li>São Jorge: (34) 3254-7171</li>
+                            <li>Luizote: (34) 3223-3075</li>
+                            <li>Pequis: (34) 3254-2917</li>
+                        </ul>
                     </div>
                 </div>
-                <!--Card cinco-->
-                <div class="card">
-                    <div class="linha">
-                        <div class="titulo">
-                            <i class="fas fa-business-time"></i>
-                            <span>Nosso horário de Funcionamento</span>
-                        </div>
-                        <div class="descricao">
-                            <ul>
-                                <li><strong>Segunda a Sexta:</strong> 18:20 às 22:50</li>
-                                <li><strong>Sábados:</strong> 18:00 às 23:00</li>
-                                <li><strong>Domingos:</strong> 18:00 às 23:00</li>
-                                <li><strong>Feriados:</strong> 18:00 às 23:00</li>
-                            </ul>
-                            <strong>Para melhor atendimento estamos abertos todos os dias da semana</strong>
-                        </div>
+            </div>
+            <!-- Card 4 -->
+            <div class="card">
+                <div class="linha">
+                    <div class="titulo">
+                        <i class="fas fa-store"></i>
+                        <span>Onde nos encontrar</span>
+                    </div>
+                    <div class="descricao">
+                        <p><strong>Cidade:</strong> Uberlândia - MG.</p>
+                        <ul>
+                            <li><strong>São Jorge: </strong>Avenida Dolorita Elias do Nascimento, 787.</li>
+                            <li><strong>Luizote: </strong>Avenida José Fonseca e Silva, 1044.</li>
+                            <li><strong>Pequis: </strong>Pequis: Avenida José Fonseca e Silva, 2210.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+
     </div>
 
     <footer>
-        &copy; 2025 Pizzaria Jardim - Todos os direitos reservados.
+        <p>© 2023 Pizzaria Jardim. Todos os direitos reservados.</p>
     </footer>
 
+    <!-- Modal HTML -->
+    <div id="promoModal" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" id="closeModal">&times;</button>
+            <div class="modal-title" id="modalTitle"></div>
+            <div class="modal-description" id="modalDescription"></div>
+            <button class="modal-action-btn">Quero esta</button>
+        </div>
+
+    </div>
+
     <script>
-        function verificarHorarioFuncionamento() {
-            const agora = new Date();
-            const horas = agora.getHours();
-            const minutos = agora.getMinutes();
+        const statusBox = document.getElementById("statusBox");
+        const now = new Date();
+        const openHour = 18;
+        const closeHour = 23;
+        const minOrder = 20.00;
 
-            const inicioHora = 18;
-            const inicioMinuto = 20;
-            const fimHora = 22;
-            const fimMinuto = 50;
-
-            const statusBox = document.getElementById("statusBox");
-
-            const depoisDoInicio = (horas > inicioHora) || (horas === inicioHora && minutos >= inicioMinuto);
-            const antesDoFim = (horas < fimHora) || (horas === fimHora && minutos <= fimMinuto);
-
-            if (depoisDoInicio && antesDoFim) {
-                statusBox.textContent = "Aberto";
-                statusBox.classList.add("status-open");
-                statusBox.classList.remove("status-closed");
-            } else {
-                statusBox.textContent = "Fechado";
-                statusBox.classList.add("status-closed");
-                statusBox.classList.remove("status-open");
+        if (now.getHours() >= openHour && now.getHours() < closeHour) {
+            //statusBox.textContent = `Aberto! Pedido mínimo R$ ${minOrder.toFixed(2)}`;
+            statusBox.textContent = `Aberto`;
+            statusBox.classList.remove('status-closed');
+            statusBox.classList.add('status-open');
+        } else {
+            statusBox.textContent = "Fechado";
+            statusBox.classList.remove('status-open');
+            statusBox.classList.add('status-closed');
+        }
+        const promoData = {
+            m: {
+                title: "Promoção Pizza M",
+                promoText: `<strong>Promo 1</strong><p>Duas pizzas de <strong>6</strong> pedaços por apenas <strong>R$ 68,90</strong>!</p>
+                    <em>Válido para pizzas: <ul>
+                        <li>Frango</li>
+                        <li>Bacon</li>
+                        <li>Muçarela</li>
+                        <li>Presunto e muçarela</li>
+                        <li>Milho</li>
+                        <li>Calabresa</li>
+                        </ul>
+                        <p>Permitido a escolha meio a meio, entre esses sabores.</p>`
+            },
+            g: {
+                title: "Promoção Pizza G",
+                promoText: `<strong>Promo 2</strong><p>Duas pizzas de <strong>8</strong> pedaços por apenas <strong>R$ 87,90</strong>!</p>
+                    <em>Válido para pizzas: <ul>
+                        <li>Frango</li>
+                        <li>Bacon</li>
+                        <li>Muçarela</li>
+                        <li>Presunto e muçarela</li>
+                        <li>Milho</li>
+                        <li>Calabresa</li>
+                        </ul>
+                        <p>Permitido a escolha meio a meio, entre esses sabores.</p>`
             }
-        }
+        };
 
-        function iniciarTimer() {
-            let tempo = 23 * 60 * 60 + 44 * 60 + 31;
-            const timerEl = document.getElementById('timer');
-            setInterval(() => {
-                const horas = String(Math.floor(tempo / 3600)).padStart(2, '0');
-                const minutos = String(Math.floor((tempo % 3600) / 60)).padStart(2, '0');
-                const segundos = String(tempo % 60).padStart(2, '0');
-                timerEl.textContent = `${horas}:${minutos}:${segundos}`;
-                if (tempo > 0) tempo--;
-            }, 1000);
-        }
+        const modal = document.getElementById("promoModal");
+        const modalTitle = document.getElementById("modalTitle");
+        const modalDescription = document.getElementById("modalDescription");
+        const closeModalBtn = document.getElementById("closeModal");
 
-        verificarHorarioFuncionamento();
-        setInterval(verificarHorarioFuncionamento, 60000);
-        iniciarTimer();
+        document.querySelectorAll('.promo-circle').forEach(circle => {
+            circle.addEventListener('click', () => {
+                const promoKey = circle.getAttribute('data-promo');
+                if (promoData[promoKey]) {
+                    modalTitle.textContent = promoData[promoKey].title;
+                    modalDescription.innerHTML = promoData[promoKey].description || promoData[promoKey].promoText || "";
+                    modal.style.display = "block";
+                }
+            });
+        });
+
+
+        closeModalBtn.addEventListener('click', () => {
+            modal.style.display = "none";
+        });
+
+        window.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        });
     </script>
 </body>
 
