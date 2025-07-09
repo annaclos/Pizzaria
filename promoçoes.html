@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Promoções</title>
     <style>
@@ -13,15 +13,6 @@
             text-align: center;
             padding: 20px;
         }
-        p {
-            color: #000000;
-        }
-
-        a {
-            color: #cc6d2c;
-            text-decoration: none;
-            font-weight: bold;
-        }
 
         h1 {
             text-align: center;
@@ -29,14 +20,19 @@
             font-family: Gabriola;
             font-size: 40px;
         }
-         button {
+
+        h3 {
+            margin-top: 0;
+        }
+
+        button {
             position: absolute;
             top: 20px;
             left: 20px;
             background-color: #fff;
             color: #4c0c0c;
             border: 2px solid #4c0c0c;
-            border-radius: 25px; 
+            border-radius: 25px;
             padding: 10px 20px;
             font-size: 14px;
             cursor: pointer;
@@ -47,6 +43,16 @@
             background-color: #990202;
             color: #fff;
         }
+
+        .mid-container {
+            background-color: #D6B161;
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            margin: 20px auto;
+            max-width: 1200px;
+        }
+
         .promo-container {
             display: flex;
             justify-content: center;
@@ -90,15 +96,46 @@
             width: 190px;
             height: 190px;
             border-radius: 100%;
-            /* margin-bottom: 10px; */
         }
- .mid-container {
-            background-color: #d6b161;
+
+        p {
+            color: #000;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .modal-content {
+            background-color: #2a2a2a;
+            margin: 10% auto;
             padding: 20px;
             border-radius: 10px;
-            color: white;
-            margin: 20px auto;
-            max-width: 1200px;
+            width: 90%;
+            max-width: 400px;
+            color: #fff;
+            box-shadow: 0 0 15px #000;
+            text-align: left;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #fff;
         }
     </style>
 </head>
@@ -109,29 +146,94 @@
     </div>
     <h1>Promoções</h1>
     <h3>Confira nossas promoções imperdíveis!</h3>
-    <div class = mid-container>
+    <div class="mid-container">
         <div class="promo-container">
-        <div class="promo-item">
-            <div class="promo-circle">
-                <img src="./assets/pizza.png" alt="Promoção Pizzas">
+            <div class="promo-item">
+                <div class="promo-circle" onclick="openPromoModal(1)">
+                    <img src="./assets/pizza.png" alt="Promoção Pizzas">
+                </div>
+                <p class="promo-text">Pizzas de 6 pedaços em dobro!!<br>por R$ 68,90.</p>
             </div>
-            <p class="promo-text">Pizzas de 6 pedaços em dobro!!<br>por R$ 68,90.</p>
-        </div>
 
-        <div class="promo-item">
-            <div class="promo-circle">
-                <img src="./assets/pizza.png" alt="Promoção Pizzas">
+            <div class="promo-item">
+                <div class="promo-circle" onclick="openPromoModal(2)">
+                    <img src="./assets/pizza.png" alt="Promoção Pizzas">
+                </div>
+                <p class="promo-text">Pizzas de 8 pedaços em dobro!!<br>por R$ 87,90.</p>
             </div>
-            <p class="promo-text">Pizzas de 8 pedaços em dobro!!<br>por R$ 87,90.</p>
-        </div>
-         <div class="promo-item">
-            <div class="promo-circle">
-                <img src="./assets/pizza.png" alt="Promoção Pizzas">
+
+            <div class="promo-item">
+                <div class="promo-circle" onclick="openPromoModal(3)">
+                    <img src="./assets/pizza.png" alt="Promoção Pizzas">
+                </div>
+                <p class="promo-text">Refrigerante ou borda recheada de brinde!!<br>Valores variados!</p>
             </div>
-            <p class="promo-text">Refrigerante ou borda recheada de brinde!!<br>Valores variados!</p>
-        </div>
         </div>
     </div>
+
+    <div id="promoModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closePromoModal()">&times;</span>
+            <div id="promoModalContent"></div>
+        </div>
+    </div>
+
+    <script>
+        function openPromoModal(promoId) {
+            const modal = document.getElementById("promoModal");
+            const content = document.getElementById("promoModalContent");
+
+            let promoText = '';
+            switch (promoId) {
+                case 1:
+                    promoText = `<strong>Promo 1</strong><p>Duas pizzas de 6 pedaços por apenas <strong>R$ 68,90</strong>!</p>
+            <em>Válido para pizzas: <ul>
+                <li>Frango</li>
+                <li>Bacon</li>
+                <li>Muçarela</li>
+                <li>Presunto e muçarela</li>
+                <li>Milho</li>
+                <li>Calabresa</li>
+                 <p>Permitido a escolha meio a meio, entre esses sabores.</p>`;
+                    break;
+                case 2:
+                    promoText = `<strong>Promo 2</strong><p> Duas pizzas de 8 pedaços por apenas <strong>R$ 87,90</strong>!</p>
+          <em>Válido para pizzas: <ul>
+                <li>Frango</li>
+                <li>Bacon</li>
+                <li>Muçarela</li>
+                <li>Presunto e muçarela</li>
+                <li>Milho</li>
+                <li>Calabresa</li>
+                    <p>Permitido a escolha meio a meio, entre esses sabores.</p>`;
+
+                    break;
+                case 3:
+                    promoText = `<strong>Promo 3</strong><p>Ganhe refrigerante ou borda recheada como brinde!<br>
+            <em>Válido para: <ul>
+                <li>Qualquer pizza no valor do cardápio</li>
+                <li>O refrigerante da promoção é de 1L, Sprite ou Fanta</li>
+                <li>Se preferir a borda de brinde, as disponíveis sao: Catupiry ou Cheddar</li>
+                <p>Caso sua escolha seja um refrigerante ou uma borda diferente, será cobrado apenas a diferença.</p> 
+            </ul></em>`;
+                    break;
+            }
+
+            content.innerHTML = promoText;
+            modal.style.display = "block";
+        }
+
+        function closePromoModal() {
+            document.getElementById("promoModal").style.display = "none";
+        }
+
+        window.onclick = function (event) {
+            const modal = document.getElementById("promoModal");
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        };
+    </script>
 </body>
 
 </html>
