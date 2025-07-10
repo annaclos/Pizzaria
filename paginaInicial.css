@@ -619,7 +619,7 @@
         .icone-aviso {
             width: 60px;
             height: 60px;
-            background-color:#b71c1c ;
+            background-color: #b71c1c;
             color: #fdd835;
             border-radius: 50%;
             display: flex;
@@ -643,3 +643,93 @@
             font-size: 16px;
             color: #333;
         }
+
+        .button-voltar {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #fff;
+            color: #4c0c0c;
+            border: 2px solid #4c0c0c;
+            border-radius: 25px;
+            padding: 10px 20px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .button-voltar:hover {
+            background-color: #990202;
+            color: #fff;
+        }
+
+        .body-macarrao {
+            font-family: Arial, sans-serif;
+            background-color: #4c0c0c;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .h1-macarrao {
+            text-align: center;
+            color: #fff;
+            font-family: Gabriola;
+            font-size: 40px;
+        }
+
+        .macarrao {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .macarrao-item {
+            cursor: pointer;
+            background-color: #1c1c1c;
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .macarrao img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .card-macarrao {
+    background-color: #fff;        
+    border-radius: 12px;           
+    padding: 20px;                 
+    max-width: 400px;              
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); 
+    display: flex;                 
+    align-items: center;           
+    gap: 15px;                     
+    margin: 20px auto;           
+}
+
+.icone-macarrao i {
+    color: red;                    
+    font-size: 40px;  
+}             
+
+.conteudo-aviso h1 {
+    margin: 0 0 5px;               
+    font-size: 21px;
+    color: #333;                  
+}
+
+.conteudo-aviso p {
+    margin: 2px 0;                 
+    color: #555;                   
+    font-size: 17px;
+}
