@@ -242,20 +242,6 @@
             border-radius: 8px;
         }
 
-        /* .oferta-relampago {
-            background-color: #fff;
-            color: #333;
-            margin: 20px;
-            padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        .oferta-relampago .timer {
-            font-size: 20px;
-            margin: 10px 0;
-        } */
-
         footer {
             text-align: center;
             padding: 10px;
@@ -456,6 +442,85 @@
             background-color: #4C0C0C;
             color: #ffffff;
         }
+
+        .pizza-carousel-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 30px auto;
+            max-width: 1000px;
+            position: relative;
+        }
+
+        .pizza-carousel {
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .carousel-track {
+            display: flex;
+            flex-direction: row;
+            transition: transform 0.3s ease;
+            padding: 10px 20px;
+        }
+
+        .carousel-item {
+            flex: 0 0 28%;
+            margin: 0 10px;
+            padding: 16px;
+            box-sizing: border-box;
+            background-color: #fff;
+            border-radius: 12px;
+            transition: transform 0.3s ease, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .carousel-item img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .carousel-item p {
+            text-align: center;
+            color: #333;
+            font-weight: bold;
+            margin-top: 8px;
+        }
+
+        .carousel-item p {
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            margin-top: 8px;
+        }
+
+        .carousel-btn {
+            background-color: #fff;
+            color: #b71c1c;
+            border: none;
+            font-size: 24px;
+            padding: 10px 16px;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: background-color 0.3s;
+            z-index: 10;
+        }
+
+        .carousel-btn:hover {
+            background-color: #b71c1c;
+            color: #fff;
+        }
     </style>
 </head>
 
@@ -503,6 +568,44 @@
                 <p class="promo-text">Pizza G (8 pedaços)<br>por R$ 87,90.</p>
             </div>
         </div>
+
+        <br>
+        <h3 style="text-align: center; color: white; font-family: Gabriola; font-size: 40px; margin: 30px 20px 10px;">
+            Sabores mais pedidos</h3>
+        <div class="pizza-carousel-wrapper">
+            <button class="carousel-btn left" onclick="moveCarousel(-1)">&#10094;</button>
+            <div class="pizza-carousel">
+                <div class="carousel-track">
+                    <!-- Itens do carrossel -->
+                    <div class="carousel-item">
+                        <img src="./assets/pizza.png" alt="Frango">
+                        <p>Frango</p>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./assets/pizza.png" alt="Bacon">
+                        <p>Bacon</p>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./assets/pizza.png" alt="Muçarela">
+                        <p>Muçarela</p>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./assets/pizza.png" alt="Presunto e Muçarela">
+                        <p>Presunto e Muçarela</p>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./assets/pizza.png" alt="Milho">
+                        <p>Milho</p>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./assets/pizza.png" alt="Calabresa">
+                        <p>Calabresa</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-btn right" onclick="moveCarousel(1)">&#10095;</button>
+        </div>
+
 
         <div class="container-cards">
             <!-- Primeiro Card-->
@@ -667,6 +770,101 @@
                 modal.style.display = "none";
             }
         });
+
+        let currentIndex = 0;
+        const track = document.querySelector('.carousel-track');
+        const items = Array.from(document.querySelectorAll('.carousel-item'));
+        const visibleItems = 3;
+        const totalItems = items.length;
+
+
+        for (let i = 0; i < visibleItems; i++) {
+            const clone = items[i].cloneNode(true);
+            track.appendChild(clone);
+        }
+
+        const allItems = Array.from(document.querySelectorAll('.carousel-item'));
+        const totalWithClones = allItems.length;
+
+        let isMoving = false;
+
+        function moveCarousel(direction) {
+            if (isMoving) return;
+            isMoving = true;
+
+            currentIndex += direction;
+
+            const itemStyle = getComputedStyle(allItems[0]);
+            const itemMargin = parseFloat(itemStyle.marginLeft) + parseFloat(itemStyle.marginRight);
+            const itemWidth = allItems[0].offsetWidth + itemMargin;
+
+            if (direction === 1) {
+
+                const offset = itemWidth * currentIndex;
+                track.style.transition = 'transform 0.7s ease';
+                track.style.transform = `translateX(-${offset}px)`;
+
+                if (currentIndex === totalItems) {
+                    track.addEventListener('transitionend', () => {
+                        resetCarouselFront();
+                    }, { once: true });
+                } else {
+                    track.addEventListener('transitionend', () => {
+                        isMoving = false;
+                    }, { once: true });
+                }
+            } else if (direction === -1) {
+
+                if (currentIndex < 0) {
+
+                    track.style.transition = 'none';
+                    const cloneIndex = totalItems;
+                    const cloneOffset = itemWidth * cloneIndex;
+                    track.style.transform = `translateX(-${cloneOffset}px)`;
+
+                    track.offsetHeight;
+
+
+                    currentIndex = totalItems - 1;
+
+
+                    requestAnimationFrame(() => {
+                        track.style.transition = 'transform 0.7s ease';
+                        const offset = itemWidth * currentIndex;
+                        track.style.transform = `translateX(-${offset}px)`;
+
+                        track.addEventListener('transitionend', () => {
+                            isMoving = false;
+                        }, { once: true });
+                    });
+                } else {
+                    const offset = itemWidth * currentIndex;
+
+                    track.style.transition = 'transform 0.7s ease';
+                    track.style.transform = `translateX(-${offset}px)`;
+
+                    track.addEventListener('transitionend', () => {
+                        isMoving = false;
+                    }, { once: true });
+                }
+            }
+        }
+
+        function resetCarouselFront() {
+            track.style.transition = 'none';
+            track.style.transform = 'translateX(0)';
+            currentIndex = 0;
+            track.offsetHeight;
+
+            requestAnimationFrame(() => {
+                track.style.transition = 'transform 0.7s ease';
+                isMoving = false;
+            });
+        }
+
+
+    </script>
+
     </script>
 </body>
 
