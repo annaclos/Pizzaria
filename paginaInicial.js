@@ -26,7 +26,7 @@
                         <li>Milho</li>
                         <li>Calabresa</li>
                         </ul>
-                        <p>Permitido a escolha meio a meio, entre esses sabores.</p>`
+                        <p>Permitido a escolha meio a meio, entre esses sabores.<br>Promoção válida para <strong>todas</strong> as unidades.</p>`
             },
             g: {
                 title: "Promoção Pizza G",
@@ -39,7 +39,7 @@
                         <li>Milho</li>
                         <li>Calabresa</li>
                         </ul>
-                        <p>Permitido a escolha meio a meio, entre esses sabores.</p>`
+                        <p>Permitido a escolha meio a meio, entre esses sabores.<br>Promoção válida para <strong>todas</strong> as unidades.</p>`
             }
         };
 
