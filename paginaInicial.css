@@ -440,26 +440,33 @@
             align-items: center;
             justify-content: center;
             margin: 30px auto;
-            max-width: 1000px;
+            max-width: 900px;
             position: relative;
+            overflow: hidden;
         }
+
 
         .pizza-carousel {
             overflow: hidden;
             width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
         }
+
 
         .carousel-track {
             display: flex;
-            flex-direction: row;
             transition: transform 0.3s ease;
-            padding: 10px 20px;
+            padding: 0;
+            margin: 0;
         }
 
+
         .carousel-item {
-            flex: 0 0 28%;
-            margin: 0 10px;
-            padding: 16px;
+            flex: 0 0 calc((100% / 3) - 10px);
+            max-width: calc((100% / 3) - 10px);
+            margin: 0 5px;
+            padding: 12px;
             box-sizing: border-box;
             background-color: #fff;
             border-radius: 12px;
@@ -469,6 +476,8 @@
             align-items: center;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
+
+
 
         .carousel-item:hover {
             transform: scale(1.05);
@@ -498,17 +507,21 @@
         }
 
         .carousel-btn {
-            background-color: #fff;
-            margin: 0 2px;
-            color: #b71c1c;
-            border: none;
-            font-size: 24px;
-            padding: 10px 16px;
-            cursor: pointer;
-            border-radius: 50%;
-            transition: background-color 0.3s;
-            z-index: 10;
-        }
+    background-color: #fff;
+    margin: 0 2px;
+    color: #b71c1c;
+    border: none;
+    font-size: 24px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+    z-index: 10;
+}
+
 
         .carousel-btn:hover {
             background-color: #4C0C0C;
