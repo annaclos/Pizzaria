@@ -507,20 +507,20 @@
         }
 
         .carousel-btn {
-    background-color: #fff;
-    margin: 0 2px;
-    color: #b71c1c;
-    border: none;
-    font-size: 24px;
-    width: 48px;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    transition: background-color 0.3s;
-    z-index: 10;
-}
+            background-color: #fff;
+            margin: 0 2px;
+            color: #b71c1c;
+            border: none;
+            font-size: 24px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background-color 0.3s;
+            z-index: 10;
+        }
 
 
         .carousel-btn:hover {
