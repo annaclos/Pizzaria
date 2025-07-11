@@ -108,31 +108,43 @@
       text-align: center;
     }
 
-    button {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      background-color: #fff;
-      color: #4c0c0c;
-      border: 2px solid #4c0c0c;
-      border-radius: 25px;
-      padding: 10px 20px;
-      font-size: 14px;
-      cursor: pointer;
-      transition: background-color 0.3s, color 0.3s;
-    }
+.botoes-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+  margin-top: 10px; 
+}
 
-    button:hover {
-      background-color: #990202;
-      color: #fff;
-    }
+.button-voltar,
+.finalizar-pedido {
+  background-color: #fff;
+  color: #4c0c0c;
+  border: 2px solid #4c0c0c;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.button-voltar:hover,
+.finalizar-pedido:hover {
+  background-color: #990202;
+  color: #fff;
+}
   </style>
 </head>
 
 <body>
-  <div>
-    <button onclick="window.location.href='paginaInicial.html'">Voltar para pagina inicial</button>
-  </div>
+  <div class="botoes-container">
+        <button class="button-voltar" onclick="window.location.href='paginaInicial.html'">Voltar para página
+            inicial</button>
+        <button class="finalizar-pedido" onclick="window.location.href='carrinho.html'">Finalizar
+            Pedido</button>
+    </div>
   <div class="container">
     <h1 style="text-align: center; color: #fff;">Bebidas</h1>
     <div class="destaques">
@@ -206,10 +218,9 @@
     });
   </script>
 
-  <footer>
-    <p style="text-align: center; color: #fff;">&copy; 2023 Pizzaria Jardim</p>
-  </footer>
-
+    <footer>
+        <p>© 2025 Pizzaria Jardim. Todos os direitos reservados.</p>
+    </footer>
 </body>
 
 </html>
