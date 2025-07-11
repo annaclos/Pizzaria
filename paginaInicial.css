@@ -247,6 +247,7 @@
             top: 20px;
             right: 20px;
             z-index: 1000;
+            margin-left: auto;
         }
 
         .login-button {
@@ -276,6 +277,13 @@
             padding: 15px 0;
             background-color: #4C0C0C;
             box-sizing: border-box;
+            position: relative;
+        }
+
+        .menu-buttons>div {
+            position: absolute;
+            top: -40px;
+            right: 0;
         }
 
         .menu-btn {
@@ -477,8 +485,6 @@
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
-
-
         .carousel-item:hover {
             transform: scale(1.05);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -631,7 +637,7 @@
 
         .conteudo-aviso {
             text-align: center;
-            
+
         }
 
         .conteudo-aviso h1 {
@@ -786,4 +792,21 @@
             padding-left: 0;
             list-style-position: inside;
             margin-left: 0;
+        }
+
+        .login-button {
+            background-color: #fff;
+            color: #b71c1c;
+            text-decoration: none;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .login-button:hover {
+            background-color: #b71c1c;
+            color: #fff;
         }
