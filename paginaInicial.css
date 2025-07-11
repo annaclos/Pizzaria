@@ -468,7 +468,7 @@
             margin: 0 5px;
             padding: 12px;
             box-sizing: border-box;
-            background-color: #fff;
+            background-color: #4C0C0C;
             border-radius: 12px;
             transition: transform 0.3s ease, box-shadow 0.3s;
             display: flex;
@@ -501,7 +501,7 @@
         }
 
         .carousel-item p {
-            color: rgb(0, 0, 0);
+            color: rgb(255, 255, 255);
             font-weight: bold;
             margin-top: 8px;
         }
