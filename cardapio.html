@@ -5,123 +5,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" href="assets/PIZZA JARDIM.png" type="image/x-icon">
+  <link rel="stylesheet" href="cardapio.css" />
   <title>Cardápio</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #4c0c0c;
-      color: #fff;
-    }
-
-    .destaques {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 20px;
-    }
-
-    .pizza-item {
-      cursor: pointer;
-      background-color: #1c1c1c;
-      border-radius: 8px;
-      padding: 10px;
-      text-align: center;
-    }
-
-    .pizza-item img {
-      width: 100%;
-      border-radius: 8px;
-    }
-
-    .pizza-item p {
-      margin-top: 10px;
-    }
-
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(0, 0, 0, 0.7);
-    }
-
-    .modal-content {
-      background-color: #2a2a2a;
-      margin: 10% auto;
-      padding: 20px;
-      border-radius: 10px;
-      width: 90%;
-      max-width: 400px;
-      color: #fff;
-      box-shadow: 0 0 15px #000;
-    }
-
-    .modal-content strong {
-      font-size: 1.2em;
-    }
-
-    .modal-content ul {
-      margin-top: 10px;
-      padding-left: 20px;
-      text-align: left;
-    }
-
-    .close {
-      color: #aaa;
-      float: right;
-      font-size: 28px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .close:hover,
-    .close:focus {
-      color: #fff;
-      text-decoration: none;
-    }
-
-    h1 {
-      text-align: center;
-      color: #fff;
-      font-family: Gabriola;
-      font-size: 40px;
-    }
-
-.botoes-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 0 20px;
-  box-sizing: border-box;
-  margin-top: 10px; 
-}
-
-.button-voltar,
-.finalizar-pedido {
-  background-color: #fff;
-  color: #4c0c0c;
-  border: 2px solid #4c0c0c;
-  border-radius: 25px;
-  padding: 10px 20px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.button-voltar:hover,
-.finalizar-pedido:hover {
-  background-color: #990202;
-  color: #fff;
-}
-
-  </style>
+  <style></style>
 </head>
 
-<body>
+<body class="body-cardapio">
   <div class="botoes-container">
     <button class="button-voltar" onclick="window.location.href='paginaInicial.html'">Voltar para página
       inicial</button>
@@ -301,63 +190,30 @@
   </div>
 
   <!-- Modal -->
-  <div id="modal" class="modal">
+  <div id="modal-do-cardapio" class="modal-cardapio">
     <div class="modal-content">
       <span class="close">&times;</span>
       <div id="modalText"></div>
     </div>
   </div>
 
-  <script>
-    const modal = document.getElementById('modal');
-    const modalText = document.getElementById('modalText');
-    const closeBtn = document.querySelector('.close');
-
-    document.querySelectorAll('.pizza-item').forEach(item => {
-      item.addEventListener('click', () => {
-        const ingredientsString = item.getAttribute('data-ingredients') || '';
-        const price = item.getAttribute('data-price') || '';
-
-        const ingredients = ingredientsString.split(',').map(i => i.trim());
-
-        let html = '<strong>Ingredientes:</strong><ul>';
-        ingredients.forEach(ingrediente => {
-          if (ingrediente) html += `<li>${ingrediente}</li>`;
-        });
-        html += '</ul>';
-
-        if (price) {
-          html += '<strong>Valores:</strong><ul>';
-          const priceItems = price.split(/[, ]+/);
-          priceItems.forEach(item => {
-            if (item.includes(':')) {
-              const [tamanho, valor] = item.split(':');
-              html += `<li>${tamanho.trim()}: ${valor.trim()}</li>`;
-            }
-          });
-          html += '</ul>';
-        }
-
-        modalText.innerHTML = html;
-        modal.style.display = 'block';
-      });
-    });
-
-    closeBtn.addEventListener('click', () => {
-      modal.style.display = 'none';
-    });
-
-    window.addEventListener('click', (e) => {
-      if (e.target == modal) {
-        modal.style.display = 'none';
-      }
-    });
-  </script>
-
+<script src="cardapio.js"></script>
 
   <footer>
     <p style="text-align: center; color: #fff;">&copy; 2025 Pizzaria Jardim. Todos os direitos reservados.</p>
   </footer>
+
+  <!-- Modal de Alerta dentro do modal normal -->
+  <div id="comentarioModalOverlay" style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+background-color: rgba(0, 0, 0, 0.5); z-index: 1999;">
+    <div id="comentarioModal"
+      style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  background: #4C0C0C; padding: 20px; border-radius: 20px; box-shadow: 0 0 15px rgba(0,0,0,0.5); text-align: center; max-width: 300px;">
+      <p id="comentarioModalText" style="color: #ffffff;"></p>
+      <button onclick="fecharComentarioModal()" class="fechar-modal-coment">Fechar</button>
+    </div>
+  </div>
+
 
 </body>
 
