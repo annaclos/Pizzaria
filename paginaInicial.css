@@ -450,7 +450,7 @@
             margin: 30px auto;
             max-width: 900px;
             position: relative;
-            overflow: hidden;
+            overflow: visible;
         }
 
 
@@ -485,10 +485,10 @@
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .carousel-item:hover {
+        /* .carousel-item:hover {
             transform: scale(1.05);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        }
+        } */
 
         .carousel-item img {
             width: 120px;
