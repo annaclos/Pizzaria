@@ -31,7 +31,7 @@
         html += `
   <div style="text-align: center; margin-top: 20px;">
     <label for="comentario" class="comentario-sobre-pedido" style="display: block; margin-bottom: 10px;">
-      Deixe um comentário sobre seu pedido:
+      Deixe uma observação sobre seu pedido:
     </label>
     <textarea id="comentario-comentario" name="comentario" rows="2" 
   style="width: 90%; max-width: 100%; padding: 8px; height: 30px; border-radius: 8px; font-size: 16px; resize: vertical;"
