@@ -1064,16 +1064,16 @@
 .button-voltar, .finalizar-pedido-promo {
     position: absolute;
     z-index: 100;
-    border-radius: 8px;
+    border-radius: 18px;
     margin: 0;
     padding: 10px;
     top: 0;
-    font-size: 15px;
+    font-size: 14px;
     font-family: Arial;
     transition: background-color 0.3s, color 0.3s;
 }
 .button-voltar:hover, .finalizar-pedido-promo:hover{
-    background-color: #fd8020;
+    background-color: #BD0404;
     color: #fff;
 }
 .button-voltar {
