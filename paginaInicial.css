@@ -956,3 +956,138 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             max-width: 250px;
         }
+
+        .body-promo {
+            background-color: #4c0c0c;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .h1-promo2 {
+            font-size: 36px;
+            font-family: Gabriola;
+        }
+
+        .topo-container-promo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .card-promo-dobro {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .card-promo {
+            background-color: #ffffff;
+            color: #000;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: 5px;
+        }
+
+        .h1-card {
+            font-size: 25px;
+            font-family: Gabriola;
+        }
+
+        .card-promo form label {
+            display: block;
+            text-align: left;
+            margin: 5px 0;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #dddddd;
+        }
+
+        .logo-promo {
+            width: 120px;
+            height: auto;
+        }
+
+.topo-container-promo {
+    position: relative; 
+    text-align: center; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.finalizar-pedido-promo {
+    position: absolute;
+    right: 20px; 
+    top: 10px;
+    z-index: 10;
+}
+
+.logo-promo {
+    display: block;
+}
+.modal-btn-container {
+    display: flex;
+    justify-content: center;
+}
+.topo-header {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button-voltar, .finalizar-pedido-promo {
+    position: absolute;
+    z-index: 100;
+    border-radius: 8px;
+    margin: 0;
+    padding: 10px;
+    top: 0;
+    font-size: 15px;
+    font-family: Arial;
+    transition: background-color 0.3s, color 0.3s;
+}
+.button-voltar:hover, .finalizar-pedido-promo:hover{
+    background-color: #fd8020;
+    color: #fff;
+}
+.button-voltar {
+    left: 20px;
+}
+
+.finalizar-pedido-promo {
+    right: 20px;
+}
+
+.botaoconfirm:hover{
+    background-color: #fd8020;
+    color: #fff;
+}
+.botaoconfirm{
+    transition: background-color 0.3s, color 0.3s;
+}

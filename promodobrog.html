@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="paginaInicial.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <title>Promoção em dobro</title>
+</head>
+
+<body class="body-promo">
+    <header>
+<div class="topo-container-promo">
+   <div class="topo-header">
+    <button class="button-voltar" onclick="window.location.href='paginaInicial.html'">Voltar para página inicial</button>
+    <img class="logo-promo" src="./assets/PIZZA JARDIM.png" alt="Pizza Jardim">
+    <button class="finalizar-pedido-promo" onclick="window.location.href='carrinho.html'">Finalizar Pedido</button>
+</div>
+    <div class="titulo-promo">
+        <h1 class="h1-promo2">Escolha os seus sabores preferidos!<br>Promoção em dobro G</h1>
+    </div>
+</div>
+        <div class="card-promo-dobro">
+            <div class="card-promo">
+                <h1 class="h1-card">Escolha os sabores da primeira</h1>
+                <form class="sabores-form" id="form1">
+                    <label><input type="checkbox" name="sabores1" value="Muçarela"> Muçarela</label><br>
+                    <label><input type="checkbox" name="sabores1" value="Presunto"> Presunto</label><br>
+                    <label><input type="checkbox" name="sabores1" value="Milho"> Milho</label><br>
+                    <label><input type="checkbox" name="sabores1" value="Calabresa"> Calabresa</label><br>
+                    <label><input type="checkbox" name="sabores1" value="Frango"> Frango</label><br>
+                    <label><input type="checkbox" name="sabores1" value="Bacon"> Bacon</label><br>
+                </form>
+            </div>
+            <div class="card-promo">
+                <h1 class="h1-card">Escolha os sabores da segunda</h1>
+                <form class="sabores-form" id="form2">
+                    <label><input type="checkbox" name="sabores2" value="Muçarela"> Muçarela</label><br>
+                    <label><input type="checkbox" name="sabores2" value="Presunto"> Presunto</label><br>
+                    <label><input type="checkbox" name="sabores2" value="Milho"> Milho</label><br>
+                    <label><input type="checkbox" name="sabores2" value="Calabresa"> Calabresa</label><br>
+                    <label><input type="checkbox" name="sabores2" value="Frango"> Frango</label><br>
+                    <label><input type="checkbox" name="sabores2" value="Bacon"> Bacon</label><br>
+                </form>
+            </div>
+        </div>
+        <div style="margin-top: 30px;">
+                <button onclick="validarEscolhas()" class="botaoconfirm">Confirmar Sabores</button>
+            </div>
+    </header>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="promodobro.js"></script>
+    <script src="promodobro.js"></script>
+</body>
+
+</html>
