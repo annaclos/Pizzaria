@@ -1,92 +1,94 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>Esqueci a Senha</title>
-    <link rel="stylesheet" href="style.css">
-     <link rel="icon" href="assets/PIZZA JARDIM.png" type="image/x-icon">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #4C0C0C;
-            display: flex;
-            height: 100vh;
-            align-items: center;
-            justify-content: center;
-            margin: 0;
-        }
-        .container {
-            background-color: #222222; 
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-            width: 320px;
-        }
-        h2 {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #c5c5c5; 
-        }
-        label {
-            color: white;
-            font-weight: bold;
-        }
-        input[type="email"] {
-            width: 100%;
-            padding: 10px;
-            margin-top: 8px;
-            margin-bottom: 16px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-        input[type="submit"] {
-            width: 100%;
-            background-color: #00cc00; 
-            color: white;
-            padding: 10px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-        input[type="submit"]:hover {
-            background-color: #009900;
-        }
-        h2 {
-           margin-left: 10px, 0px, 20px, 20px
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Esqueci a Senha</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="assets/PIZZA JARDIM.png" type="image/x-icon">
+
+  <!-- Importa o SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #4C0C0C;
+      display: flex;
+      height: 100vh;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+    }
+    .container {
+      background-color: #222222; 
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+      width: 320px;
+      text-align: center;
+    }
+    h2 {
+      margin-bottom: 20px;
+      color: #c5c5c5; 
+    }
+    label {
+      color: white;
+      font-weight: bold;
+      display: block;
+      text-align: left;
+      margin-bottom: 5px;
+    }
+    input[type="email"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    input[type="submit"] {
+      width: 100%;
+      background-color: #00cc00; 
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    input[type="submit"]:hover {
+      background-color: #009900;
+    }
+    .link-voltar a {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #555;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
 
 <div class="container">
-    <img src="https://instadelivery-public.nyc3.cdn.digitaloceanspaces.com/stores/logo/172659447666e9bdac6f4d2_medium.png" alt="Logo Pizzaria Jardim" class="logo">
-<h1>Pizzaria Jardim</h1>
-    <h2>Esqueci a Senha</h2>
-    <form action="/recuperar-senha" method="POST">
-        <label for="email">Digite seu e-mail:</label>
-        <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
-        
-        <input type="submit" value="Enviar link de recuperação">
-        
-        <div class="link-voltar" style="text-align: center; margin-top: 20px;">
-            <a href="index.html" style="
-                display: inline-block;
-                padding: 10px 20px;
-                background-color: #555;
-                color: white;
-                text-decoration: none;
-                border-radius: 4px;
-                font-weight: bold;
-            ">
-                Voltar
-            </a>
-        </div>
-    </form>
+  <img src="https://instadelivery-public.nyc3.cdn.digitaloceanspaces.com/stores/logo/172659447666e9bdac6f4d2_medium.png" alt="Logo Pizzaria Jardim" class="logo" style="width: 100px;">
+  <h1 style="color: white;">Pizzaria Jardim</h1>
+  <h2>Esqueci a Senha</h2>
+
+  <form id="form-recuperar">
+    <label for="email">Digite seu e-mail:</label>
+    <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+    <input type="submit" value="Enviar link de recuperação">
+
+    <div class="link-voltar" style="margin-top: 20px;">
+      <a href="index.html">Voltar</a>
+    </div>
+  </form>
 </div>
 
+<script src="esquecisenha.js"></script>
 
 </body>
 </html>
-
