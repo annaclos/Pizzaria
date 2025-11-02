@@ -169,17 +169,21 @@
     <img src="https://instadelivery-public.nyc3.cdn.digitaloceanspaces.com/stores/logo/172659447666e9bdac6f4d2_medium.png" alt="Logo Pizzaria Jardim" class="logo">
 
     <h1>Pizzaria Jardim</h1>
-    <h2>Login</h2>
+<h2>Login</h2>
 
-    <form method="post" action="#">
-      <div class="form-box">
-        <label for="email">Email ou CPF</label>
-        <input type="email" name="email" id="email" required />
+    <form method="post" action="#" id="loginForm">
+        <div class="form-box">
+            <label for="email">Email ou CPF</label>
+            <input type="email" name="email" id="email" required />
 
-        <label for="senha">Senha</label>
-        <input type="password" name="senha" id="senha" required />
+            <label for="senha">Senha</label>
+            <input type="password" name="senha" id="senha" required />
 
-<button type="submit">Logar</button>
+            <button type="submit">Logar</button>
+        </div> 
+    </form>
+    
+    <p id="mensagem" style="margin-top: 20px; font-weight: bold;"></p>
 </div> 
 </form>
 
@@ -201,3 +205,6 @@
     </a>
   </li>
 </ul>
+<script src="index.js"></script>
+</body>
+</html>
